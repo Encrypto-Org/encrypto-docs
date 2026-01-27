@@ -1,0 +1,94 @@
+:root {
+  --ifm-color-primary: #01BFA2;
+  --ifm-color-primary-dark: #01ab91;
+  --ifm-color-primary-darker: #01a189;
+  --ifm-color-primary-darkest: #018571;
+  --ifm-color-primary-light: #01d3b3;
+  --ifm-color-primary-lighter: #01ddbb;
+  --ifm-color-primary-lightest: #0cf5d3;
+  --ifm-code-font-size: 95%;
+  --ifm-font-family-base: 'Inter', system-ui, -apple-system, sans-serif;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #01BFA2;
+  --ifm-color-primary-dark: #01ab91;
+  --ifm-color-primary-darker: #01a189;
+  --ifm-color-primary-darkest: #018571;
+  --ifm-color-primary-light: #01d3b3;
+  --ifm-color-primary-lighter: #01ddbb;
+  --ifm-color-primary-lightest: #0cf5d3;
+  --ifm-background-color: #09090b;
+  --ifm-background-surface-color: #111113;
+  --ifm-navbar-background-color: #09090b;
+  --ifm-footer-background-color: #050506;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+[data-theme='dark'] .navbar {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+[data-theme='dark'] .footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.navbar__logo img {
+  height: 28px;
+}
+
+/* Badge styles for status labels */
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badge--live {
+  background: rgba(1, 191, 162, 0.15);
+  color: #01BFA2;
+  border: 1px solid rgba(1, 191, 162, 0.3);
+}
+
+.badge--soon {
+  background: rgba(250, 204, 21, 0.1);
+  color: #facc15;
+  border: 1px solid rgba(250, 204, 21, 0.2);
+}
+
+.badge--alpha {
+  background: rgba(139, 92, 246, 0.1);
+  color: #a78bfa;
+  border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+/* Hero overrides */
+.hero--primary {
+  --ifm-hero-background-color: #09090b;
+  --ifm-hero-text-color: #fafafa;
+}
+
+/* Admonition overrides */
+[data-theme='dark'] .alert--info {
+  --ifm-alert-background-color: rgba(1, 191, 162, 0.08);
+  --ifm-alert-border-color: rgba(1, 191, 162, 0.3);
+}
+
+/* Table styling */
+[data-theme='dark'] table {
+  border-collapse: collapse;
+}
+
+[data-theme='dark'] table th {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+[data-theme='dark'] table td,
+[data-theme='dark'] table th {
+  border-color: rgba(255, 255, 255, 0.06);
+}
