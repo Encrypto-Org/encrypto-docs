@@ -52,12 +52,15 @@ Spending USDC directly incurs no conversion fee — it's a 1:1 debit.
 
 ## Why the Economics Work
 
-Crypto-native infrastructure has lower overhead than traditional banking. On-chain settlement costs fractions of a cent on L2 chains, and stablecoin transfers don't require correspondent banking networks, nostro/vostro accounts, or multi-day clearing processes.
+Encrypto's cost structure is fundamentally different from traditional banking because of two things: on-chain settlement and Bridge (Stripe's stablecoin orchestration platform).
+
+On-chain settlement costs fractions of a cent on L2 chains. Bridge eliminates the correspondent banking overhead that makes cross-border transfers expensive — no nostro/vostro accounts, no SWIFT fees, no multi-day clearing processes. Cross-border transfers that cost $25-50 through traditional banks cost pennies through stablecoin rails.
 
 This doesn't mean there are no costs — there are partners, infrastructure, and compliance obligations that cost money. But the structural overhead is lower, which means:
 
 - **Users earn yield** on their balance that traditional banks can't match
-- **Transfer fees are lower** because crypto rails are cheaper than SWIFT/ACH for many corridors
+- **Transfer fees are lower** because Bridge's stablecoin rails are cheaper than SWIFT/ACH for most corridors
 - **Card fees are competitive** because on-chain settlement reduces issuer costs
+- **No FX markup** on card transactions — Bridge doesn't charge cross-border fees when users transact locally
 
 We're transparent about where we make money (conversion fees, interchange sharing with card partner) and where we don't (account maintenance, basic transfers, card issuance).

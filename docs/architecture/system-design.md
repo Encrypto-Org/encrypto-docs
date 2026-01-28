@@ -40,9 +40,10 @@ Every component exists to abstract complexity away from the end user while maint
     └─────┬─────┘    └───────────┘    └───────────┘
           │                                │
     ┌─────▼─────┐    ┌───────────┐   ┌─────▼─────┐
-    │  Bridge   │    │  9 Chains │   │   Visa    │
-    │ (Payments)│    │ Supported │   │  Network  │
-    └───────────┘    └───────────┘   └───────────┘
+    │   Bridge     │    │  9 Chains │   │   Visa    │
+    │  (Stripe)    │    │ Supported │   │  Network  │
+    │ Orchestration│    └───────────┘   └───────────┘
+    └──────────────┘
 ```
 
 ## Component Breakdown
@@ -64,7 +65,7 @@ Services include:
 - **Liquidity Engine** — Real-time asset conversion across DEX aggregators and market makers
 - **Identity Service** — User authentication (Privy), KYC orchestration, session management
 - **Card Service** — Card issuance, transaction authorization, balance management
-- **Banking Service** — Bank account linking (Plaid), on-ramp/off-ramp transfers (Bridge), payment rail management
+- **Banking Service** — Bank account linking (Plaid), on-ramp/off-ramp transfers (Bridge Orchestration API), virtual accounts, payment rail management
 - **Points Service** — Reward tracking, referral management, leaderboard
 - **Webhook Handler** — Processes callbacks from KYC provider, card network, Bridge, and on-chain events
 
@@ -72,10 +73,47 @@ Services include:
 
 | Partner | Role | Integration |
 |---------|------|-------------|
-| **Privy** | Authentication + wallet management | Social login, embedded wallets, session management |
-| **Bridge** | Payment rails + multi-chain | On-ramp, off-ramp, ACH, wire, SEPA, PIX, SPEI, 9 chains |
-| **Card Issuer** | Visa card program | Card issuance, authorization, settlement |
+| **Bridge (Stripe)** | Stablecoin orchestration platform | Transfers, multi-chain, virtual accounts, compliance, card rails |
+| **Privy** | Authentication + wallet infrastructure | Social login, embedded wallets, managed custody, session management |
 | **Plaid** | Bank account linking | Account verification, balance checks |
+
+### Bridge — Core Infrastructure
+
+Bridge is Encrypto's primary infrastructure layer for money movement. Acquired by Stripe, Bridge is a full-stack stablecoin orchestration platform that handles the complexity of converting between fiat, stablecoins, and blockchains.
+
+Encrypto uses Bridge for:
+
+| Capability | What It Does |
+|-----------|-------------|
+| **Orchestration API** | Converts between any two dollar formats (USD, EUR, USDC, USDT, etc.) across fiat rails and blockchain networks |
+| **Transfer API** | Moves money across payment rails — ACH, wire, SEPA, PIX, SPEI — with automatic deposit detection and lifecycle management |
+| **Virtual Accounts** | Instant USD, EUR, and MXN deposit accounts with local bank details for each user |
+| **Multi-Chain Settlement** | 9 blockchains supported natively — deposits detected automatically, conversions handled server-side |
+| **Card Settlement** | Visa card transactions settle through Bridge's card infrastructure with zero FX markup and no cross-border fees |
+| **KYC/KYB** | Identity verification, sanctions screening, and ongoing compliance monitoring — built into the platform |
+| **Webhooks** | Real-time callbacks for transfer state changes, deposit confirmations, and compliance events |
+
+#### Transfer Lifecycle
+
+Every fiat transfer follows a deterministic state machine:
+
+```
+awaiting_funds → funds_received → payment_submitted → payment_processed
+```
+
+- **awaiting_funds** — Bridge is waiting for the user's deposit (crypto, wire, ACH push)
+- **funds_received** — Deposit confirmed, Bridge is processing the conversion
+- **payment_submitted** — Fiat payment sent to the destination bank
+- **payment_processed** — Transfer complete, funds delivered
+
+If the user's wallet or prefunded account is the source, `awaiting_funds` is skipped — transfers initiate instantly.
+
+#### Why Bridge
+
+- **Stripe-backed.** Bridge was acquired by Stripe, inheriting institutional-grade infrastructure, compliance expertise, and bank relationships.
+- **Rails-agnostic.** One API for ACH, wire, SEPA, PIX, SPEI, and 9 blockchain networks. Adding a new rail or chain is configuration, not engineering.
+- **Compliance built-in.** KYC, sanctions screening, and transaction monitoring are handled at the platform level — Encrypto doesn't need to build or maintain separate compliance infrastructure.
+- **Settlement speed.** Cross-border transfers that take 2-3 days via traditional correspondent banking settle in under 30 minutes through Bridge's stablecoin rails.
 
 ### Data Layer
 

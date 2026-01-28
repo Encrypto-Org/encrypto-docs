@@ -24,13 +24,18 @@ Total time from tap to final settlement: **same day** (Visa standard).
 
 ## Settlement Flow (Bank Off-Ramp)
 
+Bank transfers are powered by Bridge's Orchestration API — the same Stripe-backed stablecoin platform that processes billions in cross-border volume. Bridge handles fiat conversion, rail selection, and delivery.
+
 ```
-1. User initiates bank transfer     → Select amount and rail
+1. User initiates bank transfer     → Select amount, currency, and rail
 2. USDC debited from wallet         → Instant
-3. Conversion to fiat               → Via Bridge
-4. Fiat sent to bank                → Via selected payment rail
-5. Funds arrive in bank account     → Rail-dependent (see below)
+3. Transfer created via Bridge API  → State: funds_received
+4. Bridge converts USDC → fiat      → Automatic, server-side
+5. Fiat submitted to bank           → State: payment_submitted
+6. Funds arrive in bank account     → State: payment_processed
 ```
+
+Bridge's transfer lifecycle provides deterministic state tracking — every transfer moves through `awaiting_funds → funds_received → payment_submitted → payment_processed` with webhook notifications at each stage.
 
 | Rail | Settlement Speed | Currency |
 |------|-----------------|----------|
@@ -58,7 +63,9 @@ Encrypto operates a hybrid settlement model:
 
 Pure on-chain settlement for card transactions and bank transfers isn't practical today. Merchants don't accept USDC — they accept Visa. Banks don't receive crypto — they receive fiat through traditional rails.
 
-So the card side settles through Visa, bank transfers settle through ACH/Wire/SEPA/PIX/SPEI, and the user's debit happens on-chain. This is the right tradeoff. The merchant and the bank get paid through the system they already use. The user gets the benefits of on-chain asset management. And Encrypto handles the translation layer between the two.
+So the card side settles through Visa, bank transfers settle through Bridge's Orchestration API (ACH/Wire/SEPA/PIX/SPEI), and the user's debit happens on-chain. Bridge abstracts away the correspondent banking complexity — no nostro/vostro accounts, no multi-day clearing, no manual reconciliation. Cross-border transfers that take 2-3 days through traditional rails settle in minutes through Bridge's stablecoin infrastructure.
+
+The merchant and the bank get paid through the system they already use. The user gets the benefits of on-chain asset management. And Bridge + Encrypto handle the translation layer between the two.
 
 ## Finality
 
@@ -90,4 +97,4 @@ Encrypto's on-chain settlement infrastructure has structural advantages over tra
 | Settlement delay | 1-3 business days | Same day |
 | Chargeback reserve | 5-10% holdback | Crypto is non-reversible |
 
-Lower overhead on the settlement side means Encrypto can pass savings to users in the form of yield, lower fees, and better economics than traditional banks can structurally offer.
+Bridge's stablecoin orchestration eliminates correspondent banking overhead — no nostro/vostro accounts, no SWIFT fees, no multi-day clearing. Lower infrastructure costs mean Encrypto can pass savings to users in the form of yield, lower fees, and better economics than traditional banks can structurally offer.

@@ -21,7 +21,7 @@ Base is the primary settlement layer for three reasons:
 
 ## Supported Stablecoins
 
-Through Bridge, Encrypto supports the following stablecoins for deposits, transfers, and conversion:
+Through Bridge (Stripe's stablecoin orchestration platform), Encrypto supports the following stablecoins for deposits, transfers, and conversion:
 
 | Stablecoin | Networks |
 |-----------|----------|
@@ -34,13 +34,17 @@ Through Bridge, Encrypto supports the following stablecoins for deposits, transf
 
 ## Supported Fiat Currencies
 
-| Currency | Code | On-Ramp | Off-Ramp | Rail |
-|----------|------|---------|----------|------|
-| **US Dollar** | USD | Yes | Yes | ACH, Wire |
-| **Euro** | EUR | Yes | Yes | SEPA |
-| **Brazilian Real** | BRL | Yes | Yes | PIX |
-| **Mexican Peso** | MXN | Yes | Yes | SPEI |
-| **British Pound** | GBP | Yes | Yes | Wire |
+Bridge's Orchestration API handles all fiat conversion and delivery across payment rails:
+
+| Currency | Code | On-Ramp | Off-Ramp | Rail | Speed |
+|----------|------|---------|----------|------|-------|
+| **US Dollar** | USD | Yes | Yes | ACH, Wire | 1-3 days / same day |
+| **Euro** | EUR | Yes | Yes | SEPA | 1 business day |
+| **Brazilian Real** | BRL | Yes | Yes | PIX | Instant |
+| **Mexican Peso** | MXN | Yes | Yes | SPEI | Minutes |
+| **British Pound** | GBP | Yes | Yes | Wire | Same day |
+
+Bridge also provisions **virtual deposit accounts** with local bank details (USD, EUR, MXN) — users get dedicated account numbers for receiving fiat without leaving the Encrypto app.
 
 ## Spend Any Crypto (via Liquidity Engine)
 
@@ -77,4 +81,4 @@ Each Encrypto account has deposit addresses on:
 - **Stellar**
 - **Tron**
 
-Deposits are detected automatically and credited to the user's balance after network confirmation.
+Bridge detects deposits automatically across all 9 chains and credits the user's balance after network confirmation. No manual bridging required.

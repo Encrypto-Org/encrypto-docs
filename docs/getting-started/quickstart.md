@@ -15,7 +15,7 @@ Behind the scenes, Encrypto provisions an embedded wallet for you automatically 
 
 ## 2. Verify Your Identity
 
-To comply with financial regulations and activate your Encrypto Card, you'll need to complete a brief identity verification (KYC). This typically takes under a minute and is handled through our banking partner.
+To comply with financial regulations and activate your Encrypto Card, you'll need to complete a brief identity verification (KYC). This typically takes under a minute and is handled through Bridge (Stripe's stablecoin platform).
 
 Once approved, your account is fully activated.
 
@@ -23,11 +23,11 @@ Once approved, your account is fully activated.
 
 There are multiple ways to add funds to your Encrypto wallet:
 
-- **From your bank account** — Link your bank via Plaid and transfer USD, which converts to USDC automatically (ACH, wire)
-- **From another wallet** — Send USDC or other supported tokens to your deposit address on any of our 9 supported chains
+- **From your bank account** — Link your bank via Plaid and transfer USD, which converts to USDC automatically via Bridge's Orchestration API (ACH, wire, SEPA, PIX, SPEI)
+- **From another wallet** — Send USDC or other supported tokens to your deposit address on any of our 9 supported chains. Bridge detects deposits automatically.
 - **From another Encrypto user** — Peer-to-peer transfers are instant and free
 
-Your balance is reflected immediately for on-chain deposits. Bank transfers depend on the payment rail (ACH: 1-3 days, wire: same day).
+Your balance is reflected immediately for on-chain deposits. Bank transfers depend on the payment rail (ACH: 1-3 days, wire: same day, PIX: instant).
 
 ## 4. Start Spending
 
