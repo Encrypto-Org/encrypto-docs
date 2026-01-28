@@ -58,7 +58,7 @@ The final price is a confidence-weighted median across sources. If sources diver
 
 ## Liquidity Aggregation
 
-The engine aggregates liquidity across multiple DEX aggregators and market makers — not a single venue. This ensures best execution regardless of the asset or chain:
+The engine aggregates liquidity across multiple DEX aggregators, cross-chain bridges, intent networks, and market makers — not a single venue. This "aggregator of aggregators" approach ensures best execution regardless of the asset, chain, or transaction size.
 
 ### DEX Aggregators
 
@@ -67,6 +67,22 @@ The engine aggregates liquidity across multiple DEX aggregators and market maker
 | Jupiter | Solana | Primary Solana aggregator, multi-route |
 | 1inch | EVM chains | Cross-DEX routing on Ethereum, Base, Arbitrum, etc. |
 | Paraswap | EVM chains | Multi-DEX aggregation with MEV protection |
+
+### Cross-Chain Bridges
+
+| Bridge | Supported Routes | Notes |
+|--------|-----------------|-------|
+| deBridge | EVM ↔ Solana, cross-EVM | Fast finality, native asset transfers |
+| Li.Fi | All major chains | Meta-bridge aggregator, routes across 15+ bridges |
+
+### Intent-Based Execution
+
+| Protocol | Type | Notes |
+|----------|------|-------|
+| Haiku | Intent solver | Gasless execution, MEV-protected fills |
+| Orda | Intent network | Cross-chain intents with guaranteed execution |
+
+Intent-based systems allow the engine to express "I need X USDC on Base" and let solvers compete to fill the order — often resulting in better execution than routing through fixed DEX paths.
 
 ### Direct DEX Integration
 
