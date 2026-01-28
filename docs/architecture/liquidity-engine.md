@@ -62,35 +62,44 @@ The engine aggregates liquidity across multiple DEX aggregators, cross-chain bri
 
 ### DEX Aggregators
 
-| Aggregator | Chains | Notes |
-|------------|--------|-------|
-| Jupiter | Solana | Primary Solana aggregator, multi-route |
-| 1inch | EVM chains | Cross-DEX routing on Ethereum, Base, Arbitrum, etc. |
-| Paraswap | EVM chains | Multi-DEX aggregation with MEV protection |
+The engine integrates with multiple DEX aggregators across ecosystems:
+
+| Ecosystem | Coverage | Notes |
+|-----------|----------|-------|
+| Solana | Full DEX coverage | Multi-route aggregation across all major Solana DEXs |
+| EVM chains | Ethereum, Base, Arbitrum, Optimism, Polygon, etc. | Cross-DEX routing with MEV protection |
 
 ### Cross-Chain Bridges
 
-| Bridge | Chains | Notes |
-|--------|--------|-------|
-| deBridge | 22+ | Ethereum, Solana, Base, BNB, Polygon, Arbitrum, HyperEVM, and more. Zero-TVL design, native asset transfers. |
-| Li.Fi | 35+ | Meta-bridge aggregator — aggregates 15+ bridges. EVM, Solana, Sui, Bitcoin ecosystem, zkSync, Linea, Metis, Flare, and more. |
+The engine routes through multiple bridge networks for cross-chain transfers:
+
+| Capability | Coverage |
+|------------|----------|
+| EVM ↔ Solana | Native asset transfers, fast finality |
+| Cross-EVM | All major L1s and L2s |
+| Non-EVM ecosystems | Cosmos, Bitcoin, Sui, and more |
+| Total chain coverage | **35+ chains** through aggregated bridge infrastructure |
 
 ### Intent-Based Execution
 
-| Protocol | Coverage | Notes |
-|----------|----------|-------|
-| Haiku | 20 chains, 45+ protocols | Declarative trading — define target state, system handles execution. Gasless, MEV-protected. |
-| Orda | EVM + L2s, Solana, Cosmos, Bitcoin | Intent-based money movement. Also supports fiat rails (ACH, SEPA, PIX, SPEI). |
+Beyond traditional swap routing, the engine supports intent-based execution — where solvers compete to fill orders rather than routing through fixed DEX paths.
 
-Intent-based systems allow the engine to express "I need X USDC on Base" and let solvers compete to fill the order — often resulting in better execution than routing through fixed DEX paths.
+| Capability | What It Does |
+|------------|-------------|
+| Declarative trading | Define target state, system handles execution |
+| Gasless execution | Users don't pay gas on every hop |
+| MEV protection | Solvers absorb MEV risk |
+| Cross-chain intents | "I need X on Chain Y" — solvers figure out the path |
+
+Intent-based execution often results in better prices than fixed routing, especially for complex multi-hop or cross-chain conversions.
 
 ### Combined Coverage
 
-By aggregating multiple aggregators and bridge networks, the Liquidity Engine has access to **40+ unique blockchain networks** — more coverage than any single integration could provide. This means:
+By aggregating DEX aggregators, bridge networks, and intent solvers, the Liquidity Engine has access to **40+ unique blockchain networks**. This means:
 
 - Best execution across the broadest possible liquidity
 - Redundancy — if one route fails, alternatives exist
-- Future-proof — new chains are added by our partners automatically
+- Future-proof — new chains added automatically as our infrastructure expands
 
 ### Direct DEX Integration
 
