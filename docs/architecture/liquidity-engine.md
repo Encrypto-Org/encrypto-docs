@@ -70,19 +70,27 @@ The engine aggregates liquidity across multiple DEX aggregators, cross-chain bri
 
 ### Cross-Chain Bridges
 
-| Bridge | Supported Routes | Notes |
-|--------|-----------------|-------|
-| deBridge | EVM ↔ Solana, cross-EVM | Fast finality, native asset transfers |
-| Li.Fi | All major chains | Meta-bridge aggregator, routes across 15+ bridges |
+| Bridge | Chains | Notes |
+|--------|--------|-------|
+| deBridge | 22+ | Ethereum, Solana, Base, BNB, Polygon, Arbitrum, HyperEVM, and more. Zero-TVL design, native asset transfers. |
+| Li.Fi | 35+ | Meta-bridge aggregator — aggregates 15+ bridges. EVM, Solana, Sui, Bitcoin ecosystem, zkSync, Linea, Metis, Flare, and more. |
 
 ### Intent-Based Execution
 
-| Protocol | Type | Notes |
-|----------|------|-------|
-| Haiku | Intent solver | Gasless execution, MEV-protected fills |
-| Orda | Intent network | Cross-chain intents with guaranteed execution |
+| Protocol | Coverage | Notes |
+|----------|----------|-------|
+| Haiku | 20 chains, 45+ protocols | Declarative trading — define target state, system handles execution. Gasless, MEV-protected. |
+| Orda | EVM + L2s, Solana, Cosmos, Bitcoin | Intent-based money movement. Also supports fiat rails (ACH, SEPA, PIX, SPEI). |
 
 Intent-based systems allow the engine to express "I need X USDC on Base" and let solvers compete to fill the order — often resulting in better execution than routing through fixed DEX paths.
+
+### Combined Coverage
+
+By aggregating multiple aggregators and bridge networks, the Liquidity Engine has access to **40+ unique blockchain networks** — more coverage than any single integration could provide. This means:
+
+- Best execution across the broadest possible liquidity
+- Redundancy — if one route fails, alternatives exist
+- Future-proof — new chains are added by our partners automatically
 
 ### Direct DEX Integration
 

@@ -44,11 +44,13 @@ The manual steps that used to take hours — bridging, swapping, off-ramping, wa
 
 Encrypto doesn't build a single bridge, integrate a single DEX, or partner with a single bank. We aggregate at every layer of the stack:
 
-**Liquidity Aggregation**
+**Liquidity Aggregation — 40+ Chains**
 - Multiple DEX aggregators (Jupiter, 1inch, Paraswap)
-- Cross-chain bridges (deBridge, Li.Fi)
-- Intent-based execution (Haiku, Orda)
+- Cross-chain bridges — deBridge (22+ chains), Li.Fi (35+ chains)
+- Intent-based execution — Haiku (20 chains, 45+ protocols), Orda (EVM, Solana, Cosmos, Bitcoin)
 - Professional market makers for guaranteed execution
+
+By aggregating aggregators, Encrypto has liquidity access across 40+ blockchain networks — more than any single bridge or DEX could provide alone.
 
 **Payment Rail Aggregation**
 - ACH, ACH Same-Day, and wire for USD
