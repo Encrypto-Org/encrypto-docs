@@ -24,16 +24,16 @@ Before a protocol or strategy is added to Encrypto's yield pool, it must meet th
 
 ## Strategy Types
 
-### Lending Markets
+### Lending Markets (Standard Tier)
 
-Deposit USDC into established lending protocols and earn interest from borrowers.
+Deposit USDC into established lending protocols and earn interest from borrowers. This is the default strategy for all accounts.
 
 - **Risk:** Low
 - **Expected APY:** 3-6%
 - **Liquidity:** Instant withdrawal (subject to utilization)
 - **Protocols:** Aave, Compound, Morpho
 
-### Stablecoin LP
+### Stablecoin LP (Enhanced Tier)
 
 Provide liquidity to stable-stable pairs (USDC/USDT, USDC/DAI) on DEXs. Minimal impermanent loss due to price correlation.
 
@@ -42,7 +42,7 @@ Provide liquidity to stable-stable pairs (USDC/USDT, USDC/DAI) on DEXs. Minimal 
 - **Liquidity:** Instant withdrawal
 - **Protocols:** Curve, Aerodrome
 
-### Restaking
+### Restaking (Enhanced Tier)
 
 Stake ETH or LSTs (stETH, rETH) through restaking protocols for additional yield on top of base staking rewards.
 
@@ -51,7 +51,7 @@ Stake ETH or LSTs (stETH, rETH) through restaking protocols for additional yield
 - **Liquidity:** Variable (depends on unbonding period)
 - **Protocols:** EigenLayer ecosystem, Symbiotic
 
-### Concentrated Liquidity
+### Concentrated Liquidity (Aggressive Tier)
 
 Active LP management in concentrated ranges on Uniswap V3-style pools. Higher returns but requires active rebalancing.
 
@@ -73,8 +73,8 @@ Rebalancing is gas-optimized and executed on L2 to minimize transaction costs.
 
 ## Yield Distribution
 
-Yield accrues to the user's Earning Balance daily. Users can:
+Yield accrues to the user's balance daily. Users can:
 
 - **Auto-compound** — Reinvest yield into the same strategy (default)
-- **Auto-transfer** — Move yield to Spending Balance for card use
+- **Auto-transfer** — Move yield to a separate balance for card spending
 - **Manual claim** — Claim accrued yield on demand

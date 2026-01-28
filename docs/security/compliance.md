@@ -58,7 +58,7 @@ All transactions are monitored for suspicious activity:
 
 ### What We Don't Store
 
-- Private keys or key shards (managed by Privy)
+- Private keys (managed by Privy's infrastructure)
 - Plaintext passwords (social login only)
 - Card numbers (managed by card issuer)
 - Biometric data (processed by identity partner, not retained)

@@ -5,7 +5,7 @@ title: Liquidity Engine
 
 # Liquidity Engine
 
-The Liquidity Engine is Encrypto's core technical moat. It's the system that enables users to spend any crypto asset at point of sale by handling real-time conversion, route optimization, and risk management.
+The Liquidity Engine is Encrypto's core technical moat. It's the system that enables users to spend any crypto asset at point of sale by handling real-time conversion, route optimization, and risk management across multiple on-chain DEX aggregators and market makers.
 
 ## What It Does
 
@@ -21,7 +21,7 @@ This is harder than it sounds.
 │                                                │
 │  ┌──────────────┐    ┌──────────────────────┐  │
 │  │  Price Oracle │    │  Liquidity Aggregator│  │
-│  │  (Multi-src) │    │  (Multi-DEX)         │  │
+│  │  (Multi-src) │    │  (Multi-DEX + MMs)   │  │
 │  └──────┬───────┘    └──────────┬───────────┘  │
 │         │                       │              │
 │  ┌──────▼───────────────────────▼───────────┐  │
@@ -58,15 +58,28 @@ The final price is a confidence-weighted median across sources. If sources diver
 
 ## Liquidity Aggregation
 
-Rather than relying on a single DEX, the engine aggregates liquidity across multiple venues:
+The engine aggregates liquidity across multiple DEX aggregators and market makers — not a single venue. This ensures best execution regardless of the asset or chain:
+
+### DEX Aggregators
+
+| Aggregator | Chains | Notes |
+|------------|--------|-------|
+| Jupiter | Solana | Primary Solana aggregator, multi-route |
+| 1inch | EVM chains | Cross-DEX routing on Ethereum, Base, Arbitrum, etc. |
+| Paraswap | EVM chains | Multi-DEX aggregation with MEV protection |
+
+### Direct DEX Integration
 
 | DEX | Chains | Notes |
 |-----|--------|-------|
-| Uniswap V3 | Base, Ethereum, Arbitrum | Concentrated liquidity, best for major pairs |
+| Uniswap V3 | Base, Ethereum, Arbitrum, Polygon | Concentrated liquidity, best for major pairs |
 | Aerodrome | Base | Native Base DEX, deep USDC pools |
 | Curve | Ethereum, Base | Optimized for stablecoin swaps |
 | Raydium | Solana | Primary Solana DEX |
-| Jupiter | Solana | Aggregator, multi-route |
+
+### Market Makers
+
+For large transactions and less liquid pairs, the engine routes through professional market makers who provide guaranteed execution at quoted prices. This reduces slippage on larger trades and ensures liquidity for assets that may not have deep DEX pools.
 
 For each swap, the engine queries all available venues and selects the route with the best effective price (swap output minus gas minus fees).
 

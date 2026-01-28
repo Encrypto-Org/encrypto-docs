@@ -5,7 +5,7 @@ title: Fees
 
 # Fees
 
-Encrypto is designed to minimize fees at every layer. On-chain settlement is inherently cheaper than traditional banking rails, and we pass those savings to users.
+Encrypto keeps fees simple and transparent. On-chain settlement infrastructure gives us structural cost advantages over traditional banking, and we pass those savings to users.
 
 ## Card Transactions
 
@@ -15,8 +15,8 @@ Encrypto is designed to minimize fees at every layer. On-chain settlement is inh
 | International purchase | **Free** | Visa FX rate applies, no Encrypto markup |
 | Monthly maintenance | **Free** | No account fees |
 | Card issuance (virtual) | **Free** | Instant activation |
-| Card issuance (physical) | $5.00 | One-time, ships globally |
-| ATM withdrawal | Coming soon | — |
+| Card issuance (physical) | $5.00 | One-time, ships to supported regions |
+| ATM withdrawal | Coming soon | -- |
 
 ## Crypto Conversions
 
@@ -34,17 +34,30 @@ Spending USDC directly incurs no conversion fee — it's a 1:1 debit.
 
 | Fee Type | Amount |
 |----------|--------|
-| Send USDC (Base) | **Free** |
+| Send USDC (on-chain) | **Free** |
 | Receive USDC | **Free** |
 | Cross-chain transfer | Network gas only |
 
-## Why It's Cheaper
+## Bank Transfers
 
-Traditional card transactions involve a chain of intermediaries, each taking a cut:
+| Fee Type | Amount | Notes |
+|----------|--------|-------|
+| ACH on-ramp (bank → wallet) | **Free** | 1-3 business days |
+| ACH off-ramp (wallet → bank) | **Free** | 1-3 business days |
+| ACH Same-Day | $1.00 | Same-day settlement |
+| Wire transfer | $5.00 | Same-day domestic, international varies |
+| SEPA transfer | Varies | EU bank transfers |
+| PIX transfer | **Free** | Instant (Brazil) |
+| SPEI transfer | **Free** | Minutes (Mexico) |
 
-```
-Traditional:  Merchant → Acquirer (0.2%) → Card Network (0.1%) → Issuer (1.5%) → Bank (fees)
-Encrypto:     Merchant → Visa → Card Partner → USDC settlement (no bank)
-```
+## Why the Economics Work
 
-By settling directly from on-chain assets, we eliminate the issuing bank's margin and correspondent banking fees entirely. The result is lower costs for both Encrypto and the end user.
+Crypto-native infrastructure has lower overhead than traditional banking. On-chain settlement costs fractions of a cent on L2 chains, and stablecoin transfers don't require correspondent banking networks, nostro/vostro accounts, or multi-day clearing processes.
+
+This doesn't mean there are no costs — there are partners, infrastructure, and compliance obligations that cost money. But the structural overhead is lower, which means:
+
+- **Users earn yield** on their balance that traditional banks can't match
+- **Transfer fees are lower** because crypto rails are cheaper than SWIFT/ACH for many corridors
+- **Card fees are competitive** because on-chain settlement reduces issuer costs
+
+We're transparent about where we make money (conversion fees, interchange sharing with card partner) and where we don't (account maintenance, basic transfers, card issuance).

@@ -3,27 +3,35 @@ sidebar_position: 1
 title: Overview
 ---
 
-# P2P Wallet
+# Wallet
 
 <span class="badge badge--live">Live</span>
 
-Every Encrypto account includes a non-custodial embedded wallet. No seed phrases to write down, no browser extensions to install, no hardware wallets to manage. Just a wallet that works.
+Every Encrypto account includes an embedded wallet. No seed phrases to write down, no browser extensions to install, no hardware wallets to manage. Just a wallet that works.
 
 ## Embedded Wallet Architecture
 
 Encrypto uses Privy's embedded wallet infrastructure to generate and manage wallets for each user. The key properties:
 
-- **Non-custodial.** Encrypto never has access to your private keys. Key material is split using MPC (Multi-Party Computation) and distributed across independent infrastructure providers.
+- **Managed by default.** Encrypto manages wallet infrastructure through Privy so users don't have to worry about key management, seed phrases, or private key security. This means users can recover their account through social login — just like any other app.
 - **Recoverable.** Unlike traditional self-custody wallets, embedded wallets are recoverable through your authenticated session. Lose your phone? Log back in and your wallet is there.
 - **Invisible.** The wallet is created automatically when you sign up. No wallet selection screen, no MetaMask popups, no chain selection dropdowns. It just works.
 
+### Custody Model
+
+Encrypto currently operates with a **managed custody model** through Privy. This is a deliberate choice for the initial product — most users in our target markets (emerging markets, first-time crypto users) need password recovery, account restoration, and a familiar auth flow. Asking non-technical users to manage private keys is a product failure, not a security feature.
+
+Our roadmap includes building toward **user-owned custody** as an opt-in feature for advanced users who want full self-custody with MPC key management. The goal is to offer both: managed custody that works like any banking app, and self-custody for users who want it.
+
+See [Custody Model](/security/custody) for the full technical breakdown.
+
 ## Wallet Types
 
-Each account provisions wallets on two networks:
+Each account provisions wallets on multiple networks:
 
 | Network | Address Format | Use Case |
 |---------|---------------|----------|
-| **EVM** (Base, Ethereum) | `0x...` | USDC spending, card funding, DeFi |
+| **EVM** (Base, Ethereum, Arbitrum, etc.) | `0x...` | USDC spending, card funding, DeFi |
 | **Solana** | Base58 | SPL token support, Solana ecosystem |
 
 Both wallets are created on first login and are immediately ready to receive funds.
@@ -44,6 +52,8 @@ Your wallet balance is displayed in USD equivalent, with the underlying USDC amo
 Encrypto Wallet
 ├── Balance: $250.00 (250 USDC)
 ├── Deposit Address: 0xe22e...
-├── Network: Base
-└── Actions: Send, Receive, Fund Card
+├── Networks: 9 chains supported
+└── Actions: Send, Receive, Fund Card, Move to Bank
 ```
+
+Your wallet, card, and rewards are all unified under a single account. One balance, one interface, no fragmentation.

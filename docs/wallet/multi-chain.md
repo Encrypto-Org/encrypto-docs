@@ -5,47 +5,58 @@ title: Multi-Chain Support
 
 # Multi-Chain Support
 
-Encrypto is designed to be chain-agnostic. While our primary settlement layer is Base (for speed and cost), the wallet infrastructure supports multiple networks.
+Encrypto supports **9 blockchains** out of the box. Users don't need to think about which chain their assets are on — the wallet handles chain detection, bridging, and settlement automatically.
 
-## Current Support
+## Supported Networks
 
-| Network | Wallet | Deposits | Spending | Status |
-|---------|--------|----------|----------|--------|
-| **Base** | EVM | Yes | Yes | <span class="badge badge--live">Live</span> |
-| **Ethereum** | EVM | Yes | Via bridge | <span class="badge badge--live">Live</span> |
-| **Solana** | SPL | Yes | Via bridge | <span class="badge badge--live">Live</span> |
-| **Arbitrum** | EVM | Yes | Via bridge | <span class="badge badge--soon">Coming Soon</span> |
-| **Optimism** | EVM | Yes | Via bridge | <span class="badge badge--soon">Coming Soon</span> |
-| **Polygon** | EVM | Yes | Via bridge | <span class="badge badge--soon">Coming Soon</span> |
+| Network | Type | Token Standard | Status |
+|---------|------|---------------|--------|
+| **Ethereum** | EVM (L1) | ERC-20 | <span class="badge badge--live">Live</span> |
+| **Base** | EVM (L2) | ERC-20 | <span class="badge badge--live">Live</span> |
+| **Arbitrum** | EVM (L2) | ERC-20 | <span class="badge badge--live">Live</span> |
+| **Optimism** | EVM (L2) | ERC-20 | <span class="badge badge--live">Live</span> |
+| **Polygon** | EVM | ERC-20 | <span class="badge badge--live">Live</span> |
+| **Avalanche** | EVM (C-Chain) | ERC-20 | <span class="badge badge--live">Live</span> |
+| **Solana** | SVM | SPL | <span class="badge badge--live">Live</span> |
+| **Stellar** | Stellar | Native | <span class="badge badge--live">Live</span> |
+| **Tron** | TVM | TRC-20 | <span class="badge badge--live">Live</span> |
+
+Multi-chain support is powered by our infrastructure partner Bridge, which handles cross-chain transfers, settlement, and payment rail connectivity across all supported networks.
 
 ## Chain Abstraction
 
 The goal is full chain abstraction — the user shouldn't need to know or care which chain their assets are on. Encrypto handles chain detection, bridging, and settlement automatically.
 
-When you deposit ETH on mainnet or USDC on Arbitrum, the Liquidity Engine detects the chain, evaluates the optimal bridge path, and moves the funds to Base for unified balance management. The user sees a single balance, not a fragmented set of chain-specific accounts.
+When you deposit USDC on Ethereum, USDT on Tron, or tokens on Solana, the system detects the chain, evaluates the optimal path, and moves the funds to the settlement layer. The user sees a single balance, not a fragmented set of chain-specific accounts.
 
 ### How Cross-Chain Deposits Work
 
 ```
-User sends USDC on Ethereum mainnet
+User sends USDC on any supported chain
     │
     ▼
 Encrypto detects deposit (event listener)
     │
     ▼
-Liquidity Engine evaluates bridge options:
-    ├── Native USDC bridge (Circle CCTP): ~3 min, cheapest
-    ├── Across Protocol: ~2 min, slightly higher fee
-    └── Optimistic bridge: ~15 min, lowest fee but slow
+Bridge evaluates optimal transfer path
     │
     ▼
-Selects optimal route (cost + speed weighted)
-    │
-    ▼
-Funds arrive on Base → balance updated
+Funds arrive on settlement layer → balance updated
 ```
 
-The user's balance updates automatically once the bridge completes. No manual claiming, no transaction signing required.
+The user's balance updates automatically once the transfer completes. No manual claiming, no transaction signing required.
+
+## Why 9 Chains
+
+Different users and regions prefer different chains:
+
+- **Ethereum / Base / Arbitrum / Optimism** — The EVM ecosystem. Most DeFi activity, institutional liquidity, and developer tooling.
+- **Solana** — Fast, cheap transactions. Popular in retail crypto and emerging markets.
+- **Tron** — Dominant for USDT transfers, especially in Asia and developing markets. Tron handles more stablecoin volume than any other chain.
+- **Stellar** — Built for cross-border payments. Used by financial institutions and remittance corridors.
+- **Polygon / Avalanche** — EVM-compatible chains with their own ecosystems and liquidity pools.
+
+By supporting all of these, Encrypto meets users where they already are — regardless of which chain they prefer.
 
 ## External Wallet Support
 

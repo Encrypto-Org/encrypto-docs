@@ -5,20 +5,20 @@ title: Overview
 
 # Security
 
-Security is the foundation. A financial product that isn't secure isn't a product. Encrypto's security model is built on the principle of minimizing trust — in ourselves, in our partners, and in any single point of failure.
+Security is the foundation. A financial product that isn't secure isn't a product. Encrypto's security model is built on defense in depth — multiple independent layers of protection, so no single failure can compromise user funds or data.
 
 ## Security Architecture
 
 ```
 ┌─────────────────────────────────────────┐
 │              User Layer                  │
-│  Social login → Session token → MPC key │
+│  Social login → Session token → Wallet  │
 └────────────────┬────────────────────────┘
                  │
 ┌────────────────▼────────────────────────┐
 │           Wallet Layer                   │
-│  MPC key shards → No single party has   │
-│  full key → Non-custodial by design     │
+│  Managed custody via Privy → Key        │
+│  material secured independently         │
 └────────────────┬────────────────────────┘
                  │
 ┌────────────────▼────────────────────────┐
@@ -36,9 +36,11 @@ Security is the foundation. A financial product that isn't secure isn't a produc
 
 ## Core Principles
 
-### Non-Custodial by Default
+### Managed Custody with a Path to Self-Custody
 
-Encrypto never holds user private keys. Wallets are created and managed through MPC (Multi-Party Computation), where key material is split across multiple independent parties. No single entity — including Encrypto — can access or move user funds without the user's authenticated session.
+Encrypto currently uses a managed custody model through Privy. Privy manages wallet key material independently — Encrypto cannot access or move user funds. Users authenticate through social login, and their wallet is recoverable without seed phrases.
+
+We're building toward optional MPC-based self-custody for users who want to hold their own key shards. The goal is to offer both: managed custody that works like any banking app, and self-custody for users who want it. See [Custody Model](/security/custody) for details.
 
 ### Defense in Depth
 
@@ -55,7 +57,7 @@ Every layer of the stack has independent security controls:
 We deliberately minimize the surface area that could be compromised:
 
 - No browser extensions (embedded wallet, not MetaMask-style)
-- No seed phrases (MPC-based key management)
+- No seed phrases (managed custody through Privy)
 - No direct smart contract interaction by users (Liquidity Engine handles all on-chain execution)
 - No API keys in client code (server-side proxy injects credentials)
 
