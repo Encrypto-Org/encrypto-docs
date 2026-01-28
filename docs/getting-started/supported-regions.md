@@ -20,7 +20,7 @@ Encrypto is focused on emerging markets where crypto-native finance solves real 
 
 ## Supported Currencies
 
-Through our infrastructure partner Bridge, Encrypto supports the following fiat currencies for on-ramp and off-ramp:
+Encrypto supports the following fiat currencies for on-ramp and off-ramp:
 
 | Currency | Code | Rails |
 |----------|------|-------|

@@ -21,7 +21,7 @@ Encrypto supports **9 blockchains** out of the box. Users don't need to think ab
 | **Stellar** | Stellar | Native | <span class="badge badge--live">Live</span> |
 | **Tron** | TVM | TRC-20 | <span class="badge badge--live">Live</span> |
 
-Multi-chain support is powered by our infrastructure partner Bridge, which handles cross-chain transfers, settlement, and payment rail connectivity across all supported networks.
+Encrypto handles cross-chain transfers, settlement, and payment rail connectivity natively across all supported networks.
 
 ## Chain Abstraction
 
@@ -38,7 +38,7 @@ User sends USDC on any supported chain
 Encrypto detects deposit (event listener)
     │
     ▼
-Bridge evaluates optimal transfer path
+Optimal transfer path evaluated
     │
     ▼
 Funds arrive on settlement layer → balance updated

@@ -21,7 +21,7 @@ Base is the primary settlement layer for three reasons:
 
 ## Supported Stablecoins
 
-Through Bridge (Stripe's stablecoin orchestration platform), Encrypto supports the following stablecoins for deposits, transfers, and conversion:
+Encrypto supports the following stablecoins for deposits, transfers, and conversion:
 
 | Stablecoin | Networks |
 |-----------|----------|
@@ -30,11 +30,11 @@ Through Bridge (Stripe's stablecoin orchestration platform), Encrypto supports t
 | **DAI** | Ethereum, Base |
 | **PYUSD** | Ethereum, Solana |
 | **EURC** | Ethereum, Base |
-| **USDB** | Bridge internal |
+| **USDB** | Internal settlement |
 
 ## Supported Fiat Currencies
 
-Bridge's Orchestration API handles all fiat conversion and delivery across payment rails:
+Encrypto's payment infrastructure handles fiat conversion and delivery across 6 payment rails:
 
 | Currency | Code | On-Ramp | Off-Ramp | Rail | Speed |
 |----------|------|---------|----------|------|-------|
@@ -44,7 +44,7 @@ Bridge's Orchestration API handles all fiat conversion and delivery across payme
 | **Mexican Peso** | MXN | Yes | Yes | SPEI | Minutes |
 | **British Pound** | GBP | Yes | Yes | Wire | Same day |
 
-Bridge also provisions **virtual deposit accounts** with local bank details (USD, EUR, MXN) — users get dedicated account numbers for receiving fiat without leaving the Encrypto app.
+Encrypto provisions **virtual deposit accounts** with local bank details (USD, EUR, MXN) — users get dedicated account numbers for receiving fiat without leaving the app.
 
 ## Spend Any Crypto (via Liquidity Engine)
 
@@ -81,4 +81,4 @@ Each Encrypto account has deposit addresses on:
 - **Stellar**
 - **Tron**
 
-Bridge detects deposits automatically across all 9 chains and credits the user's balance after network confirmation. No manual bridging required.
+Deposits are detected automatically across all 9 chains and credited to the user's balance after network confirmation. No manual bridging required.
