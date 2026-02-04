@@ -82,6 +82,7 @@ This isn't about avoiding regulation. It's about building infrastructure that ca
 | **Encrypto Card** | <span class="badge badge--live">Live</span> | Visa debit funded by any crypto. Spend anywhere Visa is accepted. |
 | **Multi-Chain Wallet** | <span class="badge badge--live">Live</span> | Unified balance across 9 blockchains. No seed phrases. |
 | **Bank Connection** | <span class="badge badge--live">Live</span> | On/off-ramp to any bank via ACH, wire, SEPA, PIX, or SPEI. |
+| **Agent Platform** | <span class="badge badge--beta">Beta</span> | Banking infrastructure for AI agents. Identity, wallets, and human-agent pairing. |
 | **Yield** | <span class="badge badge--soon">Coming Soon</span> | Earn on your balance by default. Choose risk level for higher returns. |
 | **Credit** | <span class="badge badge--soon">Coming Soon</span> | Borrow against your crypto. Collateralized and uncollateralized lines. |
 
