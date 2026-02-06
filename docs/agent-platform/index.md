@@ -11,6 +11,18 @@ The next wave of AI isn't just chatbots — it's agents that take action. Agents
 
 Encrypto is the first platform where AI agents are first-class participants in the financial system.
 
+## Get Started
+
+Register your agent with one line:
+
+```bash
+curl -X POST https://app.encrypto.fun/api/agents/register \
+  -H "Content-Type: application/json" \
+  -d '{"agent_name": "my-agent"}'
+```
+
+You'll get an API key and a wallet address. That's it — your agent can hold funds, send payments, and interact with the Encrypto network. See the full [Quick Start](../agents/quick-start) guide.
+
 ## The Opportunity
 
 AI agents are projected to manage over $1 trillion in transactions by 2030. But there's no infrastructure for them:
@@ -26,61 +38,48 @@ Every agent today operates through hacky workarounds — shared API keys, human-
 
 Encrypto treats agents as a new class of financial actor — not quite human, not quite software, but something in between that needs its own identity, its own wallet, and its own trust model.
 
-### Agent Identity
+### Agent Identity & Wallets
 
-Every agent gets a verified on-chain identity tied to its controlling wallet. This identity is portable, auditable, and builds reputation over time. An agent that handles millions in transactions reliably earns trust that follows it across the ecosystem.
-
-### Agent Wallets
-
-Agents get their own non-custodial wallets — they can receive payments, hold balances, and transact independently. No shared credentials. No single points of failure. Each agent operates with its own keys.
+Every agent gets a verified identity and their own wallet at registration. Agents can receive payments, hold balances, and build transaction history — establishing trust over time.
 
 ### Human-Agent Pairing
 
-For sensitive operations like card purchases, agents pair with human users. The human sets the rules:
+Agents can request to pair with human users. Once approved, agents can access specific capabilities with limits the human controls:
 
-- Maximum spend per transaction
-- Daily and monthly limits
-- Auto-approval thresholds
-- Allowed merchant categories
-- Instant revocation
+- Spending limits (daily, monthly, per-transaction)
+- Auto-approval thresholds for small purchases
+- Real-time notifications for every transaction
+- Instant revocation at any time
 
-When an agent needs to make a purchase outside auto-approval limits, the human gets a notification and approves with one tap. The agent never sees card numbers — it just gets a one-time token for that specific transaction.
+### Trust Tiers
 
-### Progressive Trust
+Agents earn trust through usage. New agents start with basic capabilities. As they build history and demonstrate reliability, they unlock card access and more features — similar to how humans build credit history. See [How Limits Work](../agents/limits) for details.
 
-New agents start with limited capabilities. As they build transaction history without incidents, they unlock higher limits and more features:
+### Card Access
 
-| Tier | Daily Volume | Capabilities |
-|------|-------------|--------------|
-| New | $10 | Receive only |
-| Verified | $100 | Send to verified agents |
-| Established | $500 | P2P transfers, basic card access |
-| Trusted | $2,000 | Full card access |
-| Premium | $10,000 | All features, priority support |
-
-Trust is earned, not granted. This creates natural Sybil resistance and aligns agent incentives with good behavior.
+Paired agents can request card purchases on behalf of their human. The human gets a notification, approves with one tap, and the agent receives a one-time token to complete the purchase. The human never shares card details — they just approve specific transactions.
 
 ## Use Cases
 
-**Personal Finance**
-- Bill pay agents that handle recurring payments within limits
-- Shopping agents that execute purchases when prices hit targets
-- Expense tracking agents that categorize and alert on spending
+**Personal Finance Agents**
+- Monitor spending and alert on unusual activity
+- Automatically pay bills within approved limits
+- Make purchases when prices drop below targets
 
-**Business Operations**
-- Procurement agents that reorder inventory automatically
-- Accounts payable agents that process approved invoices
-- Travel agents that book within policy guidelines
+**Business Automation**
+- Procurement agents that order supplies when inventory is low
+- Expense management agents that handle team reimbursements
+- Payment agents that process invoices automatically
 
 **Trading & DeFi**
-- Portfolio rebalancing agents with defined risk parameters
-- Yield optimization agents that move between protocols
-- Arbitrage agents that execute time-sensitive opportunities
+- Agents that execute trading strategies with defined risk limits
+- Yield optimization agents that move funds between protocols
+- Arbitrage agents that act on time-sensitive opportunities
 
-**Creator Economy**
-- Revenue collection agents for digital creators
-- Royalty distribution agents that split payments automatically
-- Subscription management agents
+**Agent-to-Agent Economy**
+- Pay other agents for services via USDC transfers
+- Receive payments for API access or compute resources
+- Build reputation through the trust tier system
 
 ## Security Model
 
@@ -94,12 +93,10 @@ Trust, but verify:
 
 Agents never see raw credentials. Card numbers, private keys, and sensitive data stay on infrastructure the agent can't access. Agents just get scoped tokens for approved actions.
 
-## Built for the Ecosystem
+## Built on Standards
 
-Our agent identity system is designed to be interoperable. Agents that build reputation on Encrypto can carry that trust to other platforms. We're building for a future where agents move between services as fluidly as humans move between apps.
+Our agent identity system is compatible with emerging on-chain identity standards (ERC-8004), ensuring agents can operate across the broader web3 ecosystem. Agent wallets support [x402](../agents/x402) for native HTTP payments.
 
 ---
 
-<span class="badge badge--beta">Beta</span> The Agent Platform is currently in private beta with select partners.
-
-*Building an agent that needs financial capabilities? [Request access](mailto:agents@encrypto.fun).*
+Ready to build? Start with the [Quick Start](../agents/quick-start) or dive into the [API Reference](../agents/api-reference).

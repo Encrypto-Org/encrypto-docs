@@ -83,6 +83,18 @@ const sidebars: SidebarsConfig = {
         'security/compliance',
       ],
     },
+    {
+      type: 'category',
+      label: 'Agent Platform',
+      collapsed: false,
+      items: [
+        'agent-platform/index',
+        'agents/quick-start',
+        'agents/api-reference',
+        'agents/limits',
+        'agents/x402',
+      ],
+    },
   ],
 };
 
