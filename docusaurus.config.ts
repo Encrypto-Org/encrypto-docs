@@ -12,7 +12,7 @@ const config: Config = {
   },
 
   url: 'https://docs.encrypto.fun',
-  baseUrl: '/',
+  baseUrl: '/encrypto-docs/',
 
   organizationName: 'Encrypto-Org',
   projectName: 'encrypto-docs',
