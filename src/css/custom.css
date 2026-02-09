@@ -1,94 +1,30 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #01BFA2;
-  --ifm-color-primary-dark: #01ab91;
-  --ifm-color-primary-darker: #01a189;
-  --ifm-color-primary-darkest: #018571;
-  --ifm-color-primary-light: #01d3b3;
-  --ifm-color-primary-lighter: #01ddbb;
-  --ifm-color-primary-lightest: #0cf5d3;
+  --ifm-color-primary: #2e8555;
+  --ifm-color-primary-dark: #29784c;
+  --ifm-color-primary-darker: #277148;
+  --ifm-color-primary-darkest: #205d3b;
+  --ifm-color-primary-light: #33925d;
+  --ifm-color-primary-lighter: #359962;
+  --ifm-color-primary-lightest: #3cad6e;
   --ifm-code-font-size: 95%;
-  --ifm-font-family-base: 'Inter', system-ui, -apple-system, sans-serif;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
+/* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #01BFA2;
-  --ifm-color-primary-dark: #01ab91;
-  --ifm-color-primary-darker: #01a189;
-  --ifm-color-primary-darkest: #018571;
-  --ifm-color-primary-light: #01d3b3;
-  --ifm-color-primary-lighter: #01ddbb;
-  --ifm-color-primary-lightest: #0cf5d3;
-  --ifm-background-color: #09090b;
-  --ifm-background-surface-color: #111113;
-  --ifm-navbar-background-color: #09090b;
-  --ifm-footer-background-color: #050506;
+  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary-dark: #21af90;
+  --ifm-color-primary-darker: #1fa588;
+  --ifm-color-primary-darkest: #1a8870;
+  --ifm-color-primary-light: #29d5b0;
+  --ifm-color-primary-lighter: #32d8b4;
+  --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
-}
-
-[data-theme='dark'] .navbar {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-[data-theme='dark'] .footer {
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-.navbar__logo img {
-  height: 28px;
-}
-
-/* Badge styles for status labels */
-.badge {
-  display: inline-block;
-  padding: 2px 8px;
-  border-radius: 4px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.badge--live {
-  background: rgba(1, 191, 162, 0.15);
-  color: #01BFA2;
-  border: 1px solid rgba(1, 191, 162, 0.3);
-}
-
-.badge--soon {
-  background: rgba(250, 204, 21, 0.1);
-  color: #facc15;
-  border: 1px solid rgba(250, 204, 21, 0.2);
-}
-
-.badge--alpha {
-  background: rgba(139, 92, 246, 0.1);
-  color: #a78bfa;
-  border: 1px solid rgba(139, 92, 246, 0.2);
-}
-
-/* Hero overrides */
-.hero--primary {
-  --ifm-hero-background-color: #09090b;
-  --ifm-hero-text-color: #fafafa;
-}
-
-/* Admonition overrides */
-[data-theme='dark'] .alert--info {
-  --ifm-alert-background-color: rgba(1, 191, 162, 0.08);
-  --ifm-alert-border-color: rgba(1, 191, 162, 0.3);
-}
-
-/* Table styling */
-[data-theme='dark'] table {
-  border-collapse: collapse;
-}
-
-[data-theme='dark'] table th {
-  background: rgba(255, 255, 255, 0.03);
-}
-
-[data-theme='dark'] table td,
-[data-theme='dark'] table th {
-  border-color: rgba(255, 255, 255, 0.06);
 }
