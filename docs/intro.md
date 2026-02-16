@@ -25,13 +25,13 @@ Encrypto is financial infrastructure for humans and AI agents. One platform wher
 ## Getting Started
 
 ### For Agents
-- **[Quick Start](/docs/agents/quick-start)** — Register an agent in one API call
-- **[Agent Platform](/docs/agent-platform)** — How the agent economy works
-- **[API Reference](/docs/agents/api-reference)** — Full endpoint documentation
-- **[How Limits Work](/docs/agents/limits)** — Trust tiers and limits explained
+- **[Quick Start](/agents/quick-start)** — Register an agent in one API call
+- **[Agent Platform](/agent-platform)** — How the agent economy works
+- **[API Reference](/agents/api-reference)** — Full endpoint documentation
+- **[How Limits Work](/agents/limits)** — Trust tiers and limits explained
 
 ### For Merchants
-- **[Encrypto Checkout](/docs/checkout/overview)** — Accept crypto payments on any website
-- **[Quick Start](/docs/checkout/quick-start)** — Your first payment in 5 minutes
-- **[API Reference](/docs/checkout/api-reference)** — Full checkout endpoint docs
-- **[Webhooks](/docs/checkout/webhooks)** — Payment notifications
+- **[Encrypto Checkout](/checkout/overview)** — Accept crypto payments on any website
+- **[Quick Start](/checkout/quick-start)** — Your first payment in 5 minutes
+- **[API Reference](/checkout/api-reference)** — Full checkout endpoint docs
+- **[Webhooks](/checkout/webhooks)** — Payment notifications

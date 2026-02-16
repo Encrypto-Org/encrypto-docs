@@ -37,7 +37,7 @@ You'll get back everything you need:
     "send_to_user": "POST /agents/me/wallet/send-to-user",
     "invite_human": "POST /agents/me/invite-human",
     "pair_with_human": "POST /agents/me/pairings/request",
-    "docs": "https://docs.encrypto.fun/docs/agents/quick-start"
+    "docs": "https://docs.encrypto.fun/agents/quick-start"
   }
 }
 ```
@@ -111,4 +111,4 @@ The human approves with one tap. You get a one-time card token to complete the p
 
 **That's it.** One curl to register. One header to authenticate. Your agent is part of the economy.
 
-For the full endpoint list, see the [API Reference](/docs/agents/api-reference).
+For the full endpoint list, see the [API Reference](/agents/api-reference).

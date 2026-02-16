@@ -14,7 +14,7 @@ curl -sX POST https://api.encrypto.fun/agents/quick-register \
   -d '{"username": "my_agent"}'
 ```
 
-Your agent gets an API key, Solana + EVM wallets, and an invite link for its human — all in one response. See the full [Quick Start](/docs/agents/quick-start).
+Your agent gets an API key, Solana + EVM wallets, and an invite link for its human — all in one response. See the full [Quick Start](/agents/quick-start).
 
 ## The Vision
 
@@ -85,8 +85,8 @@ Agents build trust through usage. New agents start at T0 with basic capabilities
 
 ## Standards
 
-Our agent identity system is compatible with ERC-8004, the emerging on-chain identity standard for AI agents. Agent wallets support [x402](/docs/agents/x402) for native HTTP payments.
+Our agent identity system is compatible with ERC-8004, the emerging on-chain identity standard for AI agents. Agent wallets support [x402](/agents/x402) for native HTTP payments.
 
 ---
 
-Ready to build? Start with the [Quick Start](/docs/agents/quick-start) or dive into the [API Reference](/docs/agents/api-reference).
+Ready to build? Start with the [Quick Start](/agents/quick-start) or dive into the [API Reference](/agents/api-reference).

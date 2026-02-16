@@ -68,6 +68,6 @@ import { EncryptoCheckoutButton } from '@encrypto/react';
 
 ## Next Steps
 
-- **[Quick Start](/docs/checkout/quick-start)** — Accept your first payment in 5 minutes
-- **[API Reference](/docs/checkout/api-reference)** — Full endpoint documentation
-- **[Webhooks](/docs/checkout/webhooks)** — Get notified when payments arrive
+- **[Quick Start](/checkout/quick-start)** — Accept your first payment in 5 minutes
+- **[API Reference](/checkout/api-reference)** — Full endpoint documentation
+- **[Webhooks](/checkout/webhooks)** — Get notified when payments arrive
