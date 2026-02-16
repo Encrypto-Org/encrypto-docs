@@ -64,6 +64,11 @@ const config = {
             position: 'left',
           },
           {
+            to: '/docs/checkout/overview',
+            label: 'Checkout',
+            position: 'left',
+          },
+          {
             href: 'https://app.encrypto.fun',
             label: 'App',
             position: 'right',
@@ -92,6 +97,10 @@ const config = {
               {
                 label: 'Agent Quick Start',
                 to: '/docs/agents/quick-start',
+              },
+              {
+                label: 'Checkout SDK',
+                to: '/docs/checkout/overview',
               },
             ],
           },
@@ -127,7 +136,7 @@ const config = {
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
-        additionalLanguages: ['bash', 'json'],
+        additionalLanguages: ['bash', 'json', 'typescript', 'python'],
       },
     }),
 };
