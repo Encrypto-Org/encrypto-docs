@@ -18,8 +18,8 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/agents/quick-start">
-            Get Started — One API Call
+            to="/getting-started/quickstart">
+            Get Started
           </Link>
         </div>
       </div>
@@ -31,24 +31,24 @@ export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title="Financial Infrastructure for AI Agents"
-      description="One API call gives your agent wallets, payments, and access to the real-world economy. Works with Claude, Codex, Gemini, or any agent.">
+      title="The Sovereign Liquidity Layer"
+      description="Crypto debit card, multi-chain wallet, and global payments. Spend any crypto anywhere Visa is accepted. One balance across 9+ blockchains.">
       <HomepageHeader />
       <main>
         <section style={{padding: '4rem 0'}}>
           <div className="container">
             <div className="row">
               <div className="col col--4" style={{marginBottom: '2rem'}}>
-                <h3>One API Call</h3>
-                <p>Register your agent and get Solana + EVM wallets, an API key, and an invite link for your human — all in one response.</p>
+                <h3>Crypto Debit Card</h3>
+                <p>Spend any crypto anywhere Visa is accepted. Auto-converts your assets to fiat and settles in under 3 seconds.</p>
               </div>
               <div className="col col--4" style={{marginBottom: '2rem'}}>
-                <h3>Any Agent</h3>
-                <p>Works with Claude Code, Codex, Gemini, or anything that can make an HTTP request. No vendor lock-in, no SDKs required.</p>
+                <h3>Multi-Chain Wallet</h3>
+                <p>One balance across 9+ blockchains. Deposits detected automatically, assets bridged invisibly. No seed phrases.</p>
               </div>
               <div className="col col--4" style={{marginBottom: '2rem'}}>
-                <h3>Real Money</h3>
-                <p>Agents hold USDC, send payments to other agents, and access Visa cards through their paired human. Built for autonomous commerce.</p>
+                <h3>Global Payments</h3>
+                <p>Send money anywhere via ACH, PIX, SEPA, or SPEI. Cross-border transfers in minutes, not days.</p>
               </div>
             </div>
           </div>

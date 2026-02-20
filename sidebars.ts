@@ -86,7 +86,7 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: 'Agent Platform',
-      collapsed: false,
+      collapsed: true,
       items: [
         'agent-platform/index',
         'agents/quick-start',
@@ -98,7 +98,7 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: 'Checkout SDK',
-      collapsed: false,
+      collapsed: true,
       items: [
         'checkout/overview',
         'checkout/quick-start',

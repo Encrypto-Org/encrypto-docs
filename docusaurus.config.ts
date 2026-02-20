@@ -62,17 +62,12 @@ const config: Config = {
           label: 'Documentation',
         },
         {
-          to: '/checkout/overview',
-          label: 'Checkout SDK',
-          position: 'left',
-        },
-        {
           href: 'https://app.encrypto.fun',
           label: 'Launch App',
           position: 'right',
         },
         {
-          href: 'https://x.com/tryencrypto',
+          href: 'https://x.com/encryptodotfun',
           label: '𝕏',
           position: 'right',
         },
@@ -94,6 +89,7 @@ const config: Config = {
           items: [
             { label: 'Architecture', to: '/architecture/system-design' },
             { label: 'Liquidity Engine', to: '/architecture/liquidity-engine' },
+            { label: 'Agent Platform', to: '/agent-platform' },
             { label: 'Checkout SDK', to: '/checkout/overview' },
             { label: 'Security', to: '/security/overview' },
           ],
@@ -101,7 +97,7 @@ const config: Config = {
         {
           title: 'Community',
           items: [
-            { label: '𝕏 (Twitter)', href: 'https://x.com/tryencrypto' },
+            { label: '𝕏 (Twitter)', href: 'https://x.com/encryptodotfun' },
             { label: 'Launch App', href: 'https://app.encrypto.fun' },
             { label: 'encrypto.fun', href: 'https://encrypto.fun' },
           ],
