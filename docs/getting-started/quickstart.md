@@ -23,15 +23,15 @@ Once approved, your account is fully activated.
 
 There are multiple ways to add funds to your Encrypto wallet:
 
-- **From your bank account** — Link your bank and transfer USD, which converts to USDC automatically (ACH, wire, SEPA, PIX, SPEI)
+- **From your bank account** — Link your bank and transfer USD, which converts to USDC automatically (ACH, PIX, SPEI) or via Stripe Onramp (card, Apple Pay)
 - **From another wallet** — Send USDC or other supported tokens to your deposit address on any of our 9 supported chains. Deposits are detected automatically.
 - **From another Encrypto user** — Peer-to-peer transfers are instant and free
 
-Your balance is reflected immediately for on-chain deposits. Bank transfers depend on the payment rail (ACH: 1-3 days, wire: same day, PIX: instant).
+Your balance is reflected immediately for on-chain deposits. Bank transfers depend on the payment rail (ACH: 1-3 days, PIX: instant).
 
 ## 4. Start Spending
 
-Once your balance is funded, your Encrypto Card is active. Add it to Apple Pay or Google Pay, or use the virtual card details for online purchases. It works anywhere Visa is accepted.
+Once your balance is funded, your Encrypto Card is active. Add it to Apple Pay, or use the virtual card details for online purchases. It works anywhere Visa is accepted. Google Pay support is coming soon.
 
 Every transaction settles from your USDC balance in real time. No pre-funding, no float, no delayed settlement.
 
@@ -40,7 +40,7 @@ Every transaction settles from your USDC balance in real time. No pre-funding, n
 Link a bank account to move money between crypto and traditional banking:
 
 - **On-ramp:** Transfer USD from your bank to your Encrypto wallet
-- **Off-ramp:** Send USDC from your wallet to any bank account via ACH, wire, SEPA, PIX, or SPEI
+- **Off-ramp:** Send USDC from your wallet to any bank account via ACH, PIX, or SPEI
 
 ## Account Structure
 

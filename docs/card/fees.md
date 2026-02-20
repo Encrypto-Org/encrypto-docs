@@ -44,9 +44,7 @@ Spending USDC directly incurs no conversion fee — it's a 1:1 debit.
 |----------|--------|-------|
 | ACH on-ramp (bank → wallet) | **Free** | 1-3 business days |
 | ACH off-ramp (wallet → bank) | **Free** | 1-3 business days |
-| ACH Same-Day | $1.00 | Same-day settlement |
-| Wire transfer | $5.00 | Same-day domestic, international varies |
-| SEPA transfer | Varies | EU bank transfers |
+| ACH Same-Day | $1.00 | Same-day settlement (where available) |
 | PIX transfer | **Free** | Instant (Brazil) |
 | SPEI transfer | **Free** | Minutes (Mexico) |
 
@@ -58,7 +56,7 @@ On-chain settlement costs fractions of a cent on L2 chains. Our stablecoin orche
 
 This doesn't mean there are no costs — there are partners, infrastructure, and compliance obligations that cost money. But the structural overhead is lower, which means:
 
-- **Users earn yield** on their balance that traditional banks can't match
+- **Users may earn yield** on their balance (coming soon)
 - **Transfer fees are lower** because stablecoin rails are cheaper than SWIFT/ACH for most corridors
 - **Card fees are competitive** because on-chain settlement reduces issuer costs
 - **No FX markup** on card transactions — no cross-border fees when users transact locally

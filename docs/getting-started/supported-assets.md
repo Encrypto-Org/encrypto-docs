@@ -30,21 +30,19 @@ Encrypto supports the following stablecoins for deposits, transfers, and convers
 | **DAI** | Ethereum, Base |
 | **PYUSD** | Ethereum, Solana |
 | **EURC** | Ethereum, Base |
-| **USDB** | Internal settlement |
 
 ## Supported Fiat Currencies
 
-Encrypto's payment infrastructure handles fiat conversion and delivery across 6 payment rails:
+Encrypto's payment infrastructure handles fiat conversion and delivery across multiple payment rails:
 
 | Currency | Code | On-Ramp | Off-Ramp | Rail | Speed |
 |----------|------|---------|----------|------|-------|
-| **US Dollar** | USD | Yes | Yes | ACH, Wire | 1-3 days / same day |
-| **Euro** | EUR | Yes | Yes | SEPA | 1 business day |
+| **US Dollar** | USD | Yes | Yes | ACH | 1-3 days |
 | **Brazilian Real** | BRL | Yes | Yes | PIX | Instant |
-| **Mexican Peso** | MXN | Yes | Yes | SPEI | Minutes |
-| **British Pound** | GBP | Yes | Yes | Wire | Same day |
+| **Mexican Peso** | MXN | Yes | Yes | SPEI | Minutes (rolling out) |
+| **Argentine Peso** | ARS | Yes | Yes | CVU | Rolling out |
 
-Encrypto provisions **virtual deposit accounts** with local bank details (USD, EUR, MXN) — users get dedicated account numbers for receiving fiat without leaving the app.
+Encrypto provisions **virtual USD deposit accounts** via Bridge — users get dedicated account numbers for receiving fiat without leaving the app.
 
 ## Spend Any Crypto (via Liquidity Engine)
 
@@ -68,7 +66,7 @@ Any ERC-20 or SPL token with sufficient DEX liquidity on supported chains can be
 | Max slippage tolerance | 1.0% |
 | Min pool liquidity | $50,000 TVL |
 | Execution window | < 3 seconds |
-| Price source | Aggregated (on-chain + oracle) |
+| Price source | Aggregated across 4 providers |
 
 Assets that don't meet these thresholds are excluded from the available spending pool and the user is notified.
 

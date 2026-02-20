@@ -42,6 +42,7 @@ const sidebars: SidebarsConfig = {
         'architecture/system-design',
         'architecture/liquidity-engine',
         'architecture/settlement',
+        'architecture/wallet-pull',
       ],
     },
     {
@@ -104,6 +105,7 @@ const sidebars: SidebarsConfig = {
         'checkout/quick-start',
         'checkout/api-reference',
         'checkout/webhooks',
+        'checkout/payment-links',
       ],
     },
   ],

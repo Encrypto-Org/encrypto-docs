@@ -20,8 +20,9 @@ This is harder than it sounds.
 │              Liquidity Engine                   │
 │                                                │
 │  ┌──────────────┐    ┌──────────────────────┐  │
-│  │  Price Oracle │    │  Liquidity Aggregator│  │
-│  │  (Multi-src) │    │  (Multi-DEX + MMs)   │  │
+│  │   Pricing    │    │  4-Provider Router   │  │
+│  │  (via aggs)  │    │ Haiku/deBridge/Li.Fi │  │
+│  │              │    │      /1inch          │  │
 │  └──────┬───────┘    └──────────┬───────────┘  │
 │         │                       │              │
 │  ┌──────▼───────────────────────▼───────────┐  │
@@ -46,15 +47,9 @@ This is harder than it sounds.
 └────────────────────────────────────────────────┘
 ```
 
-## Price Oracle
+## Pricing
 
-The engine maintains a real-time price feed from multiple sources to prevent single-source manipulation:
-
-- **On-chain TWAP** — Time-weighted average price from DEX pools (30s, 60s, 300s windows)
-- **Chainlink / Pyth** — Oracle feeds for major pairs
-- **CEX reference** — Binance/Coinbase spot prices for cross-validation
-
-The final price is a confidence-weighted median across sources. If sources diverge by more than 0.5%, the engine flags the asset as potentially manipulated and widens the slippage buffer or skips the asset entirely.
+The engine derives pricing from the aggregator quotes themselves. By querying 4 independent aggregators in parallel, the multi-provider approach provides natural cross-validation — if one provider returns a significantly different price, it's excluded. The best effective price (output minus gas minus fees) is selected for execution.
 
 ## Liquidity Aggregation
 
@@ -78,43 +73,41 @@ The engine routes through multiple bridge networks for cross-chain transfers:
 | EVM ↔ Solana | Native asset transfers, fast finality |
 | Cross-EVM | All major L1s and L2s |
 | Non-EVM ecosystems | Cosmos, Bitcoin, Sui, and more |
-| Total chain coverage | **35+ chains** through aggregated bridge infrastructure |
+| Total chain coverage | 9 native chains + extended reach via aggregated bridge infrastructure |
 
 ### Intent-Based Execution
 
-Beyond traditional swap routing, the engine supports intent-based execution — where solvers compete to fill orders rather than routing through fixed DEX paths.
+The engine supports intent-based execution via Haiku — where solvers compete to fill orders rather than routing through fixed DEX paths.
 
 | Capability | What It Does |
 |------------|-------------|
-| Declarative trading | Define target state, system handles execution |
+| Declarative trading | Define target state, Haiku handles execution |
 | Gasless execution | Users don't pay gas on every hop |
 | MEV protection | Solvers absorb MEV risk |
 | Cross-chain intents | "I need X on Chain Y" — solvers figure out the path |
 
-Intent-based execution often results in better prices than fixed routing, especially for complex multi-hop or cross-chain conversions.
+Intent-based execution via Haiku often results in better prices than fixed routing, especially for complex multi-hop or cross-chain conversions.
 
 ### Combined Coverage
 
-By aggregating DEX aggregators, bridge networks, and intent solvers, the Liquidity Engine has access to **40+ unique blockchain networks**. This means:
+By aggregating 4 providers, the Liquidity Engine has native support for **9 blockchains** with aggregator-extended reach to additional chains for cross-chain conversions. This means:
 
 - Best execution across the broadest possible liquidity
 - Redundancy — if one route fails, alternatives exist
-- Future-proof — new chains added automatically as our infrastructure expands
+- Future-proof — new chains added automatically as aggregator coverage grows
 
-### Direct DEX Integration
+### DEX Coverage (via Aggregators)
 
-| DEX | Chains | Notes |
-|-----|--------|-------|
-| Uniswap V3 | Base, Ethereum, Arbitrum, Polygon | Concentrated liquidity, best for major pairs |
-| Aerodrome | Base | Native Base DEX, deep USDC pools |
-| Curve | Ethereum, Base | Optimized for stablecoin swaps |
-| Raydium | Solana | Primary Solana DEX |
+Encrypto does not maintain direct DEX integrations — by design. The aggregators route through the best DEX for each trade automatically, including:
 
-### Market Makers
+- **Uniswap V3** — Concentrated liquidity on EVM chains
+- **Aerodrome** — Native Base DEX with deep USDC pools
+- **Curve** — Optimized for stablecoin swaps
+- **Raydium** — Primary Solana DEX
 
-For large transactions and less liquid pairs, the engine routes through professional market makers who provide guaranteed execution at quoted prices. This reduces slippage on larger trades and ensures liquidity for assets that may not have deep DEX pools.
+This approach means Encrypto automatically benefits from new DEX integrations added by the aggregator providers without any code changes.
 
-For each swap, the engine queries all available venues and selects the route with the best effective price (swap output minus gas minus fees).
+For each swap, the engine queries all 4 aggregator APIs in parallel and selects the route with the best effective price (swap output minus gas minus fees).
 
 ## Route Optimization
 
@@ -129,7 +122,7 @@ The optimizer evaluates three types of routes for every conversion:
 ### Cross-DEX Split
 Split a large order across multiple DEXs to minimize price impact. A $10,000 ETH → USDC conversion might execute 60% on Uniswap and 40% on Aerodrome to get better aggregate execution.
 
-The optimizer runs in under 100ms and selects the route with the lowest total cost (slippage + gas + fees).
+The optimizer queries all four aggregator APIs in parallel and selects the best quote, typically completing in under 2 seconds.
 
 ## Risk Management
 

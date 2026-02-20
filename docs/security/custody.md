@@ -34,28 +34,9 @@ This is a deliberate product decision, not a technical limitation. Our target us
 | **Recovery possible** | Yes — re-authenticate via social login |
 | **Can user export keys** | Privy supports key export for users who want it |
 
-## Roadmap: User-Owned Custody
+## Future Custody Options
 
-We're building toward giving users the **option** of full self-custody through MPC key management:
-
-```
-┌──────────────────────────────────────────────────┐
-│              Future: MPC Key Management           │
-│                                                   │
-│   Private Key → Split into 3 shards              │
-│                                                   │
-│   Shard 1: User device (secure enclave)          │
-│   Shard 2: Privy infrastructure                  │
-│   Shard 3: Encrypted backup (user-controlled)    │
-│                                                   │
-│   Signing requires 2 of 3 shards                 │
-│   No single party can reconstruct the full key   │
-└──────────────────────────────────────────────────┘
-```
-
-When MPC self-custody launches, users will be able to **opt in** to holding their own key shard. This gives them the security guarantees of self-custody without the operational burden of managing raw key material.
-
-The key insight: **both models will coexist.** Users who want managed custody (the majority) keep the current experience. Users who want self-custody can upgrade. One size does not fit all in a global product.
+We may explore additional custody models in the future. Any future options would coexist with the current managed model — users who prefer managed custody would keep the current experience. No timeline is set for this work.
 
 ## Transaction Signing
 

@@ -41,10 +41,9 @@ Every transfer follows a deterministic lifecycle — `awaiting_funds → funds_r
 |------|-----------------|----------|
 | **ACH** | 1-3 business days | USD |
 | **ACH Same-Day** | Same day | USD |
-| **Wire (Fedwire)** | Same day | USD |
-| **SEPA** | 1 business day | EUR |
 | **PIX** | Instant | BRL |
 | **SPEI** | Minutes | MXN |
+| **CVU** | Minutes | ARS |
 
 ## On-Chain vs. Off-Chain
 
@@ -57,13 +56,12 @@ Encrypto operates a hybrid settlement model:
 | Cross-chain deposits | **On-chain** | Chain-dependent (varies by network) |
 | Bank off-ramp | **Hybrid** | USDC debit: instant. Fiat delivery: rail-dependent. |
 | Bank on-ramp | **Hybrid** | Fiat receipt: rail-dependent. USDC credit: instant after confirmation. |
-| Yield accrual | **On-chain** | Per-block or per-epoch |
 
 ### Why Hybrid?
 
 Pure on-chain settlement for card transactions and bank transfers isn't practical today. Merchants don't accept USDC — they accept Visa. Banks don't receive crypto — they receive fiat through traditional rails.
 
-So the card side settles through Visa, bank transfers settle through our stablecoin orchestration layer (ACH/Wire/SEPA/PIX/SPEI), and the user's debit happens on-chain. Stablecoin rails abstract away the correspondent banking complexity — no nostro/vostro accounts, no multi-day clearing, no manual reconciliation. Cross-border transfers that take 2-3 days through traditional rails settle in minutes.
+So the card side settles through Visa, bank transfers settle through our stablecoin orchestration layer (ACH/PIX/SPEI/CVU), and the user's debit happens on-chain. Stablecoin rails abstract away the correspondent banking complexity — no nostro/vostro accounts, no multi-day clearing, no manual reconciliation. Cross-border transfers that take 2-3 days through traditional rails settle in minutes.
 
 The merchant and the bank get paid through the system they already use. The user gets the benefits of on-chain asset management. And Encrypto handles the translation layer between the two.
 

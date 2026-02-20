@@ -21,7 +21,7 @@ Encrypto uses Privy's embedded wallet infrastructure to generate and manage wall
 
 Encrypto currently operates with a **managed custody model** through Privy. This is a deliberate choice for the initial product — most users in our target markets (emerging markets, first-time crypto users) need password recovery, account restoration, and a familiar auth flow. Asking non-technical users to manage private keys is a product failure, not a security feature.
 
-Our roadmap includes building toward **user-owned custody** as an opt-in feature for advanced users who want full self-custody with MPC key management. The goal is to offer both: managed custody that works like any banking app, and self-custody for users who want it.
+We may explore additional custody options in the future as the product matures.
 
 See [Custody Model](/security/custody) for the full technical breakdown.
 

@@ -67,4 +67,4 @@ For users who prefer their existing wallets, Encrypto supports connecting:
 - **Phantom** — Solana ecosystem
 - **WalletConnect** — Any compatible wallet
 
-Connected external wallets can be used as funding sources for the Encrypto Card. The Liquidity Engine can pull from connected wallet balances (with user approval) to fund card transactions.
+External wallet connection is supported for viewing balances. Direct funding from external wallets is under development (backend infrastructure complete, user interface in progress).

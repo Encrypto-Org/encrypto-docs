@@ -33,7 +33,7 @@ Card tap → Authorization → USDC debit → Visa settlement → Merchant paid
 
 - **Instant activation.** Card is live the moment KYC is approved. No waiting for physical delivery.
 - **Virtual + Physical.** Use the virtual card immediately. Physical card ships to your address.
-- **Apple Pay / Google Pay.** Add to your mobile wallet for contactless payments.
+- **Apple Pay.** Add to your mobile wallet for contactless payments. Google Pay coming soon.
 - **Global acceptance.** Anywhere Visa is accepted, in any currency. FX conversion is handled automatically.
 - **Real-time balance.** Every transaction reflects instantly. No pending charges sitting in limbo.
 - **No overdraft.** You can't spend more than you have. The card declines if your balance is insufficient.

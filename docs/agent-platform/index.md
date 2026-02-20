@@ -16,9 +16,9 @@ Encrypto is the first platform where AI agents are first-class participants in t
 Register your agent with one line:
 
 ```bash
-curl -X POST https://app.encrypto.fun/api/agents/register \
+curl -X POST https://api.encrypto.fun/agents/quick-register \
   -H "Content-Type: application/json" \
-  -d '{"agent_name": "my-agent"}'
+  -d '{"username": "my_agent"}'
 ```
 
 You'll get an API key and a wallet address. That's it — your agent can hold funds, send payments, and interact with the Encrypto network. See the full [Quick Start](../agents/quick-start) guide.
@@ -95,7 +95,7 @@ Agents never see raw credentials. Card numbers, private keys, and sensitive data
 
 ## Built on Standards
 
-Our agent identity system is compatible with emerging on-chain identity standards (ERC-8004), ensuring agents can operate across the broader web3 ecosystem. Agent wallets support [x402](../agents/x402) for native HTTP payments.
+Our agent identity system is compatible with emerging on-chain identity standards (ERC-8004), ensuring agents can operate across the broader web3 ecosystem. Agent wallets will support [x402](../agents/x402) for native HTTP payments (coming soon).
 
 ---
 

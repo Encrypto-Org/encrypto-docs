@@ -89,7 +89,7 @@ const config: Config = {
           items: [
             { label: 'Architecture', to: '/architecture/system-design' },
             { label: 'Liquidity Engine', to: '/architecture/liquidity-engine' },
-            { label: 'Agent Platform', to: '/agent-platform' },
+            { label: 'Agent Platform', to: '/agent-platform/' },
             { label: 'Checkout SDK', to: '/checkout/overview' },
             { label: 'Security', to: '/security/overview' },
           ],

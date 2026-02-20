@@ -11,12 +11,12 @@ Encrypto is focused on emerging markets where crypto-native finance solves real 
 
 | Region | Card Issuance | Wallet | Bank Off-Ramp | Payment Rail |
 |--------|--------------|--------|---------------|--------------|
-| **United States** | Yes | Yes | ACH, Wire | USD |
+| **United States** | Yes | Yes | ACH | USD |
 | **Brazil** | Rolling out | Yes | PIX | BRL |
 | **Mexico** | Rolling out | Yes | SPEI | MXN |
-| **Argentina** | Rolling out | Yes | Coming soon | ARS |
+| **Argentina** | Rolling out | Yes | CVU (rolling out) | ARS |
 | **Colombia** | Rolling out | Yes | Coming soon | COP |
-| **Europe** | Coming soon | Yes | SEPA | EUR |
+| **Europe** | Evaluating | Yes | — | — |
 
 ## Supported Currencies
 
@@ -24,11 +24,10 @@ Encrypto supports the following fiat currencies for on-ramp and off-ramp:
 
 | Currency | Code | Rails |
 |----------|------|-------|
-| **US Dollar** | USD | ACH, ACH Same-Day, Wire |
-| **Euro** | EUR | SEPA |
+| **US Dollar** | USD | ACH |
 | **Brazilian Real** | BRL | PIX |
 | **Mexican Peso** | MXN | SPEI |
-| **British Pound** | GBP | Wire |
+| **Argentine Peso** | ARS | CVU (rolling out) |
 
 Stablecoin support: **USDC**, **USDT**, **DAI**, **PYUSD**, **EURC**
 
@@ -43,24 +42,23 @@ Latin America has the highest crypto adoption rates relative to GDP in the world
 - **Remittance corridors.** Cross-border payments between LATAM countries and the US are a massive market with high fees (5-8% average). Crypto rails reduce this dramatically.
 - **Mobile-first population.** Smartphone penetration is high. Users are already comfortable with digital-first financial products (PIX in Brazil, Mercado Pago in Argentina).
 
-### Africa
+### Payment Infrastructure Providers
 
-Africa represents one of the fastest-growing markets for crypto adoption:
+| Provider | Coverage | Status |
+|----------|----------|--------|
+| **Bridge** | USD ACH, card issuance | Live |
+| **Koywe** | 7 LATAM countries | Sandbox (production pending) |
+| **Orda** | Brazil PIX | Live |
+| **LocalPayment** | 17 LATAM countries | Backend built, credentials pending |
 
-- **Nigeria** — Highest P2P crypto trading volume in Africa. Limited access to USD accounts drives demand for stablecoin alternatives.
-- **Kenya** — M-Pesa established mobile-first finance. The population is primed for digital financial products.
-- **South Africa** — Most developed financial infrastructure on the continent, but still significant unbanked population.
-
-### Asia-Pacific
-
-Selective expansion into APAC markets based on regulatory clarity and demand. Priority markets are being evaluated based on crypto adoption rates, regulatory frameworks, and banking infrastructure gaps.
+We are evaluating additional markets based on regulatory frameworks and partner availability.
 
 ## Expansion Approach
 
 We're not trying to be everywhere at once. Encrypto expands selectively into markets where we can provide full product coverage:
 
 1. **Card issuance** — Requires licensed card issuing partner in the jurisdiction
-2. **Bank connectivity** — Requires local payment rail integration (ACH, SEPA, PIX, SPEI, etc.)
+2. **Bank connectivity** — Requires local payment rail integration (ACH, PIX, SPEI, etc.)
 3. **Local currency off-ramp** — Users need to be able to convert to and from their local currency
 4. **Regulatory compliance** — KYC/AML requirements vary by jurisdiction
 

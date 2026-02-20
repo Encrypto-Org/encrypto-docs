@@ -33,7 +33,7 @@ Encrypto abstracts all of this into a single layer. We aggregate liquidity sourc
 |----------------|-------------------|
 | A card that works anywhere | Aggregates DEX liquidity, converts any asset to fiat, settles with Visa — in under 3 seconds |
 | A single balance | Unifies assets across 9 blockchains into one view with automatic bridging |
-| Send to any bank | Routes through optimal payment rail (ACH, wire, SEPA, PIX, SPEI) based on destination and speed |
+| Send to any bank | Routes through optimal payment rail (ACH, PIX, SPEI, CVU) based on destination and speed |
 | Instant deposits | Detects incoming funds on any chain, bridges to settlement layer automatically |
 
 The manual steps that used to take hours — bridging, swapping, off-ramping, waiting for settlement — are abstracted away and made cheaper by doing this at scale.
@@ -44,24 +44,23 @@ The manual steps that used to take hours — bridging, swapping, off-ramping, wa
 
 Encrypto doesn't build a single bridge, integrate a single DEX, or partner with a single bank. We aggregate at every layer of the stack:
 
-**Liquidity Aggregation — 40+ Chains**
-- Multiple DEX aggregators across EVM and Solana
-- Cross-chain bridge network with 35+ chain coverage
-- Intent-based execution layer for gasless, MEV-protected fills
-- Professional market makers for guaranteed execution
-
-By aggregating multiple liquidity sources, Encrypto has access to 40+ blockchain networks — more coverage than any single integration could provide.
+**Liquidity Aggregation**
+- 4 DEX/bridge aggregators queried in parallel for best execution
+- Native support for 9 blockchains
+- Aggregators extend routing to additional chains for cross-chain conversions
+- Intent-based execution via Haiku for gasless, MEV-protected fills
 
 **Payment Rail Aggregation**
-- ACH, ACH Same-Day, and wire for USD
-- SEPA for EUR
+- ACH for USD
 - PIX for BRL (instant)
-- SPEI for MXN (minutes)
+- SPEI for MXN (rolling out)
+- CVU for ARS (rolling out)
+- Stripe Onramp for fiat-to-USDC (card, ACH, Apple Pay)
 
 **Banking Infrastructure**
-- Virtual deposit accounts with local bank details (USD, EUR, MXN)
+- USD deposit accounts via Bridge
+- Local LATAM payment methods via multi-provider strategy (Koywe, Orda, LocalPayment)
 - KYC/KYB and compliance monitoring
-- Fiat on/off-ramp across 6 payment rails
 
 This aggregation means we can always find the best route — the cheapest, fastest, or most reliable path from A to B.
 
@@ -81,9 +80,21 @@ This isn't about avoiding regulation. It's about building infrastructure that ca
 |---------|--------|-------------|
 | **Encrypto Card** | <span class="badge badge--live">Live</span> | Visa debit funded by any crypto. Spend anywhere Visa is accepted. |
 | **Multi-Chain Wallet** | <span class="badge badge--live">Live</span> | Unified balance across 9 blockchains. No seed phrases. |
-| **Bank Connection** | <span class="badge badge--live">Live</span> | On/off-ramp to any bank via ACH, wire, SEPA, PIX, or SPEI. |
+| **Bank Connection** | <span class="badge badge--live">Live</span> | On/off-ramp via ACH (USD), PIX (BRL). SPEI and CVU rolling out. |
 | **Yield** | <span class="badge badge--soon">Coming Soon</span> | Earn on your balance by default. Choose risk level for higher returns. |
 | **Credit** | <span class="badge badge--soon">Coming Soon</span> | Borrow against your crypto. Collateralized and uncollateralized lines. |
+
+## Technical Highlights
+
+What's actually built and running today:
+
+- **4-Provider Route Aggregation** — Haiku, deBridge, Li.Fi, and 1inch queried in parallel for best execution on every swap
+- **Smart Contract Auto-Pull** — Deployed on Arbitrum + Base for automated wallet funding during card transactions
+- **Dual Payment Detection** — Alchemy (EVM) + Helius (Solana) webhooks for real-time deposit detection across 9 chains
+- **Multi-Provider LATAM Strategy** — Bridge (USD), Koywe (7 LATAM countries), Orda (Brazil PIX), LocalPayment (17 countries)
+- **Stripe Onramp** — Card and Apple Pay fiat-to-USDC conversion
+- **Agent Platform** — Full agent identity, wallets, and payment infrastructure for AI agents
+- **Checkout SDK** — Embeddable crypto payment widget for any website
 
 ## Supported Networks
 
@@ -113,10 +124,9 @@ Encrypto solves the usability problem. We're building the infrastructure layer t
 
 We're focused on markets where this infrastructure solves real problems:
 
-- **Latin America** — Currency instability, inflation, and limited access to USD accounts. Dollar-denominated finance isn't a luxury — it's a necessity.
-- **Africa** — Mobile-first populations with high crypto adoption and limited banking.
+- **Latin America** — Currency instability, inflation, and limited access to USD accounts. Dollar-denominated finance isn't a luxury — it's a necessity. Argentina CVU infrastructure built, Brazil PIX live, Mexico and Colombia expanding.
 - **United States** — Core market for card issuance and USD banking rails.
-- **Europe** — Coming soon via SEPA integration.
+- **Europe** — Evaluating European market entry.
 
 We expand selectively to markets where we can provide full coverage — card issuance, bank connectivity, and local currency support.
 

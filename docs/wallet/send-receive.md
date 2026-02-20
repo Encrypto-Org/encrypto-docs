@@ -46,7 +46,7 @@ Send money from your Encrypto wallet directly to any bank account. The recipient
 1. Open the **Send** screen
 2. Select **Bank Transfer**
 3. Enter the recipient's bank details (or select a saved recipient)
-4. Choose the payment rail (ACH, Wire, SEPA, PIX, SPEI)
+4. Choose the payment rail (ACH, PIX, SPEI)
 5. Enter the amount
 6. Confirm — USDC is converted and sent to the bank
 
@@ -56,10 +56,9 @@ Supported off-ramp rails:
 |------|----------|--------|-------|
 | **ACH** | USD | US | 1-3 business days |
 | **ACH Same-Day** | USD | US | Same day |
-| **Wire** | USD | US / International | Same day |
-| **SEPA** | EUR | Europe | 1 business day |
 | **PIX** | BRL | Brazil | Instant |
 | **SPEI** | MXN | Mexico | Minutes |
+| **CVU** | ARS | Argentina | Rolling out |
 
 ### QR Scanner
 

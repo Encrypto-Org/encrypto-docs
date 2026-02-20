@@ -40,7 +40,7 @@ Security is the foundation. A financial product that isn't secure isn't a produc
 
 Encrypto currently uses a managed custody model through Privy. Privy manages wallet key material independently — Encrypto cannot access or move user funds. Users authenticate through social login, and their wallet is recoverable without seed phrases.
 
-We're building toward optional MPC-based self-custody for users who want to hold their own key shards. The goal is to offer both: managed custody that works like any banking app, and self-custody for users who want it. See [Custody Model](/security/custody) for details.
+We may explore additional custody options in the future. See [Custody Model](/security/custody) for details.
 
 ### Defense in Depth
 

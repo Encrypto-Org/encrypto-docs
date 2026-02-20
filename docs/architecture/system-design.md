@@ -14,7 +14,7 @@ Every component exists to abstract complexity away from the end user while maint
 ```
 ┌──────────────────────────────────────────────────────┐
 │                    Encrypto App                       │
-│              (Next.js / React Native)                │
+│              (Next.js + Capacitor)                    │
 │  ┌──────────┐  ┌──────────┐  ┌──────────────────┐   │
 │  │ Dashboard │  │  Wallet  │  │  Card Management │   │
 │  └────┬─────┘  └────┬─────┘  └────────┬─────────┘   │
@@ -65,19 +65,19 @@ Services include:
 - **Liquidity Engine** — Real-time asset conversion across DEX aggregators and market makers
 - **Identity Service** — User authentication (Privy), KYC orchestration, session management
 - **Card Service** — Card issuance, transaction authorization, balance management
-- **Banking Service** — Bank account linking (Plaid), on-ramp/off-ramp transfers, virtual accounts, payment rail management (ACH, wire, SEPA, PIX, SPEI)
+- **Banking Service** — Bank account linking (Plaid), on-ramp/off-ramp transfers, virtual accounts, payment rail management (ACH, PIX, SPEI, CVU). Multi-provider LATAM coverage: Koywe (7 countries), Orda (Brazil PIX), LocalPayment (17 countries)
 - **Points Service** — Reward tracking, referral management, leaderboard
 - **Webhook Handler** — Processes callbacks from KYC provider, card network, payment rails, and on-chain events
 
 ### Stablecoin Orchestration Layer
 
-Encrypto's payment infrastructure converts between any two dollar formats (USD, EUR, USDC, USDT, etc.) across fiat rails and blockchain networks through a unified orchestration layer.
+Encrypto's payment infrastructure converts between fiat currencies and stablecoins (USD, USDC, USDT, etc.) across fiat rails and blockchain networks through a unified orchestration layer.
 
 | Capability | What It Does |
 |-----------|-------------|
-| **Fiat Conversion** | Converts between fiat and stablecoins across 6 payment rails (ACH, wire, SEPA, PIX, SPEI) |
+| **Fiat Conversion** | Converts between fiat and stablecoins via ACH (live), PIX (live), SPEI (rolling out), CVU (rolling out). Expanding via multi-provider LATAM strategy. |
 | **Multi-Chain Settlement** | 9 blockchains supported natively — deposits detected automatically, conversions handled server-side |
-| **Virtual Accounts** | Instant USD, EUR, and MXN deposit accounts with local bank details for each user |
+| **Virtual Accounts** | USD deposit accounts via Bridge |
 | **Card Settlement** | Visa card transactions settle with zero FX markup and no cross-border fees |
 | **KYC/KYB** | Identity verification, sanctions screening, and ongoing compliance monitoring built into the platform |
 | **Transfer Lifecycle** | Deterministic state tracking with real-time webhook notifications at each stage |
@@ -90,7 +90,7 @@ Every fiat transfer follows a deterministic state machine:
 awaiting_funds → funds_received → payment_submitted → payment_processed
 ```
 
-- **awaiting_funds** — Waiting for the user's deposit (crypto, wire, ACH push)
+- **awaiting_funds** — Waiting for the user's deposit (crypto, ACH push)
 - **funds_received** — Deposit confirmed, conversion processing
 - **payment_submitted** — Fiat payment sent to the destination bank
 - **payment_processed** — Transfer complete, funds delivered
@@ -99,7 +99,7 @@ If the user's wallet is the source, `awaiting_funds` is skipped — transfers in
 
 #### Why This Architecture
 
-- **Rails-agnostic.** One system for ACH, wire, SEPA, PIX, SPEI, and 9 blockchain networks. Adding a new rail or chain is configuration, not engineering.
+- **Rails-agnostic.** One system for ACH, PIX, SPEI, CVU, and 9 blockchain networks. Adding a new rail or chain is configuration, not engineering.
 - **Compliance built-in.** KYC, sanctions screening, and transaction monitoring are handled at the platform level — no separate compliance infrastructure to build or maintain.
 - **Settlement speed.** Cross-border transfers that take 2-3 days via traditional correspondent banking settle in minutes through stablecoin rails.
 - **Institutional-grade.** The same compliance and banking infrastructure used by the largest payment companies in the world.
@@ -115,9 +115,9 @@ If the user's wallet is the source, `awaiting_funds` is skipped — transfers in
 
 ## Design Principles
 
-### 1. Managed Custody (Now) → Self-Custody (Future)
+### 1. Managed Custody
 
-Encrypto currently manages wallet infrastructure through Privy. Users authenticate via social login and their wallet is recoverable — no seed phrases. We're building toward optional MPC-based self-custody for advanced users. See [Custody Model](/security/custody) for details.
+Encrypto currently manages wallet infrastructure through Privy. Users authenticate via social login and their wallet is recoverable — no seed phrases. We may explore additional custody options in the future. See [Custody Model](/security/custody) for details.
 
 ### 2. Fail Closed
 
@@ -129,4 +129,4 @@ The architecture doesn't assume any specific chain. We support 9 blockchains tod
 
 ### 4. Progressive Enhancement
 
-Basic features (USDC spending, P2P transfers, bank connection) work with zero crypto knowledge. Advanced features (multi-chain deposits, DeFi yield, credit lines) are available for users who want them. The product grows with the user.
+Basic features (USDC spending, P2P transfers, bank connection) work with zero crypto knowledge. Advanced features (multi-chain deposits, spend-any-crypto) are available for users who want them. The product grows with the user.

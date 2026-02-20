@@ -36,7 +36,7 @@ User taps card ($50 purchase)
     ▼
 Liquidity Engine
     ├── User holds: 0.5 ETH, 200 USDC, 1000 MATIC
-    ├── Best route: ETH → USDC via Uniswap V3 (0.02% impact)
+    ├── Best route: ETH → USDC via aggregated DEX liquidity (0.02% impact)
     ├── Amount needed: 0.0145 ETH → 50.00 USDC
     ├── Slippage: 0.02% (within tolerance)
     └── Execute: swap + settle atomically
