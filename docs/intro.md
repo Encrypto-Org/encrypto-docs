@@ -12,7 +12,7 @@ Encrypto is a crypto-native neobank that eliminates the friction between holding
 
 Traditional finance built payments infrastructure for a world of fiat currency. That infrastructure is slow, expensive, and excludes billions of people. Crypto solved the money problem but created a usability problem — you can hold a portfolio worth six figures and still can't buy coffee with it without off-ramping to a bank, waiting days, and paying fees at every step.
 
-Encrypto sits at the intersection of on-chain liquidity and off-chain payments. Our stablecoin orchestration layer handles fiat conversion, multi-chain settlement, and payment rail delivery across 9 blockchains and 6 fiat payment rails. Our Liquidity Engine handles real-time asset conversion through multiple DEX aggregators and market makers — so users just see a card that works.
+Encrypto sits at the intersection of on-chain liquidity and off-chain payments. Built on Bridge (Stripe's stablecoin orchestration platform), our infrastructure handles fiat conversion, multi-chain settlement, and payment rail delivery across 9 blockchains and 6 fiat payment rails. Our Liquidity Engine handles real-time asset conversion through multiple DEX aggregators and market makers — so users just see a card that works.
 
 ## What We Build
 
@@ -26,7 +26,7 @@ Encrypto sits at the intersection of on-chain liquidity and off-chain payments. 
 
 ## Multi-Chain by Default
 
-Encrypto natively supports **9 blockchains**:
+Encrypto supports **9 blockchains** through Bridge (Stripe), our core infrastructure partner:
 
 | Network | Type | Status |
 |---------|------|--------|
@@ -64,15 +64,15 @@ Send crypto to your grandma's bank account. She doesn't need a wallet, an app, o
 
 ## Why Crypto-Native
 
-Most fintech products are built on legacy banking rails and bolt crypto on as an afterthought. Encrypto is built the other way around — crypto-native infrastructure with fiat as the output layer.
+Most fintech products are built on legacy banking rails and bolt crypto on as an afterthought. Encrypto is built the other way around — crypto-native infrastructure with fiat as the output layer, powered by Bridge's stablecoin orchestration platform.
 
 This matters because:
 
-- **Settlement is faster.** On-chain settlement is final in seconds, not days. Our stablecoin rails settle cross-border transfers in minutes — not the 2-3 days required by traditional correspondent banking.
+- **Settlement is faster.** On-chain settlement is final in seconds, not days. Bridge's stablecoin rails settle cross-border transfers in minutes — not the 2-3 days required by traditional correspondent banking.
 - **Liquidity is global.** We tap into on-chain liquidity across 9 blockchains through multiple DEX aggregators and market makers — not a single venue's order book.
-- **Yield is built in.** Stablecoin infrastructure enables yield that traditional banking can't offer. Users earn on their balance by default, with the option to increase risk for higher returns.
-- **The economics are better.** Stablecoin orchestration eliminates the overhead of correspondent banking — no nostro/vostro accounts, no SWIFT fees, no multi-day clearing. Lower infrastructure costs mean we can pass yield and savings to users that banks structurally can't.
-- **Compliance is institutional.** KYC, sanctions screening, and transaction monitoring are handled at the platform level — the same compliance infrastructure used by the largest payment companies in the world.
+- **Yield is built in.** Crypto infrastructure enables yield that traditional banking can't offer. Users earn on their balance by default, with the option to increase risk for higher returns.
+- **The economics are better.** Bridge eliminates the overhead of correspondent banking — no nostro/vostro accounts, no SWIFT fees, no multi-day clearing. Lower infrastructure costs mean we can pass yield and savings to users that banks structurally can't.
+- **Compliance is institutional.** Bridge (Stripe) handles KYC, sanctions screening, and transaction monitoring at the platform level — the same compliance infrastructure used by the largest payment companies in the world.
 
 ## Who This Is For
 
