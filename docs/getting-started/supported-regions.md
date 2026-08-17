@@ -5,18 +5,20 @@ title: Supported Regions
 
 # Supported Regions
 
-Encrypto is focused on emerging markets where crypto-native finance solves real problems — currency instability, banking exclusion, and expensive cross-border payments.
+Encrypto is focused on emerging markets where crypto-native finance solves real problems — currency instability, financial exclusion, and expensive cross-border payments.
 
 ## Current Markets
 
-| Region | Card Issuance | Wallet | Bank Off-Ramp | Payment Rail |
-|--------|--------------|--------|---------------|--------------|
-| **United States** | Yes | Yes | ACH | USD |
-| **Brazil** | Rolling out | Yes | PIX | BRL |
-| **Mexico** | Rolling out | Yes | SPEI | MXN |
-| **Argentina** | Rolling out | Yes | CVU (rolling out) | ARS |
-| **Colombia** | Rolling out | Yes | Coming soon | COP |
-| **Europe** | Evaluating | Yes | — | — |
+| Region | Wallet | Bank Off-Ramp | Payment Rail |
+|--------|--------|---------------|--------------|
+| **United States** | Yes | ACH | USD |
+| **Brazil** | Yes | PIX | BRL |
+| **Mexico** | Yes | SPEI | MXN |
+| **Argentina** | Yes | CVU (rolling out) | ARS |
+| **Colombia** | Yes | Coming soon | COP |
+| **Europe** | Yes | — | — |
+
+Card availability is determined during signup based on your region.
 
 ## Supported Currencies
 
@@ -35,7 +37,7 @@ Stablecoin support: **USDC**, **USDT**, **DAI**, **PYUSD**, **EURC**
 
 ### Latin America
 
-Latin America has the highest crypto adoption rates relative to GDP in the world. The region has a combination of factors that make crypto-native banking not just attractive, but necessary:
+Latin America has the highest crypto adoption rates relative to GDP in the world. The region has a combination of factors that make crypto-native finance not just attractive, but necessary:
 
 - **Currency instability.** Multiple LATAM currencies have experienced 30-100%+ inflation in recent years. USDC offers dollar-denominated stability without requiring a US bank account.
 - **Banking exclusion.** Hundreds of millions of people across the region are unbanked or underbanked. Traditional banking infrastructure requires physical branches, minimum balances, and lengthy onboarding.

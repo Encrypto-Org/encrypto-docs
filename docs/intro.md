@@ -8,7 +8,7 @@ title: Introduction
 
 **Crypto-native finance for the global economy.**
 
-Encrypto is a crypto-native neobank that eliminates the friction between holding digital assets and using them in the real world. We abstract away the complexity of bridging, swapping, off-ramping, and banking — so users can hold crypto, spend it instantly anywhere Visa is accepted, earn yield on their balance, and send money to any bank account on the planet.
+Encrypto is the self-custody crypto app that eliminates the friction between holding digital assets and using them in the real world. We abstract away the complexity of bridging, swapping, off-ramping, and moving money — so users can hold crypto, spend it instantly anywhere Visa is accepted, earn yield on their balance, and send money to any bank account on the planet.
 
 Traditional finance built payments infrastructure for a world of fiat currency. That infrastructure is slow, expensive, and excludes billions of people. Crypto solved the money problem but created a usability problem — you can hold a portfolio worth six figures and still can't buy coffee with it without off-ramping to a bank, waiting days, and paying fees at every step.
 
@@ -84,10 +84,10 @@ This matters because:
 
 Encrypto is focused on **emerging markets** where crypto-native finance solves real problems:
 
-- **Latin America** — Argentina, Brazil, Mexico, Colombia, and more. High inflation, currency controls, and large unbanked populations make dollar-denominated accounts essential.
-- **Africa** — Nigeria, Kenya, South Africa, and expanding. Mobile-first populations with high crypto adoption and limited traditional banking infrastructure.
+- **Latin America** — High inflation, currency controls, and large unbanked populations make dollar-denominated accounts essential.
+- **Africa** — Mobile-first populations with high crypto adoption and limited traditional banking infrastructure.
 - **Asia-Pacific** — Selective expansion based on regulatory clarity and market demand.
-- **United States** — Core market for card issuance and USD banking rails.
+- **United States** — Core market for USD payment rails.
 
 We're not trying to be everywhere at once. We expand selectively to markets where we can provide full product coverage — card issuance, bank connectivity, and local currency off-ramps.
 

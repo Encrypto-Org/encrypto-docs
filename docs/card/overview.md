@@ -49,3 +49,9 @@ Card tap → Authorization → USDC debit → Visa settlement → Merchant paid
 | Daily spend limit | $10,000 |
 | ATM withdrawal | Coming soon |
 | International | Yes, anywhere Visa is accepted |
+
+---
+
+*MONEY TRANSMISSION SERVICES PROVIDED BY BRIDGE BUILDING INC. AND LEAD BANK (COLLECTIVELY, THE "PAYMENT PROVIDERS"). THESE PAYMENT PROVIDERS ARE THE ONLY ENTITIES AUTHORIZED TO INITIATE OR EXECUTE PAYMENTS AND TRANSFERS ON YOUR BEHALF. AT NO TIME WILL ENCRYPTO RECEIVE, CONTROL, OR HOLD YOUR FUNDS.*
+
+*The Encrypto Visa® debit card is issued by Lead Bank, pursuant to a license from Visa U.S.A. Inc. and may be used everywhere Visa debit or credit cards are accepted.*
