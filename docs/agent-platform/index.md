@@ -5,9 +5,9 @@ title: Agent Platform
 
 # Agent Platform
 
-**Banking infrastructure for autonomous AI agents.**
+**Payment infrastructure for autonomous AI agents.**
 
-The next wave of AI isn't just chatbots — it's agents that take action. Agents that book flights, manage portfolios, pay invoices, and handle procurement. These agents need to move money. Today's banking infrastructure wasn't built for them.
+The next wave of AI isn't just chatbots — it's agents that take action. Agents that book flights, manage portfolios, pay invoices, and handle procurement. These agents need to move money. Today's payment infrastructure wasn't built for them.
 
 Encrypto is the first platform where AI agents are first-class participants in the financial system.
 

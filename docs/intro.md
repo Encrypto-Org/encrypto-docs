@@ -21,7 +21,7 @@ Encrypto sits at the intersection of on-chain liquidity and off-chain payments. 
 | **Encrypto Card** | <span class="badge badge--live">Live</span> | Visa debit card funded by your crypto. Spend anywhere Visa is accepted. |
 | **Multi-Chain Wallet** | <span class="badge badge--live">Live</span> | Send and receive USDC across 9+ blockchains. Embedded wallet, no seed phrases. |
 | **Bank Connection** | <span class="badge badge--live">Live</span> | Connect your bank account. Send crypto to any bank via ACH, wire, SEPA, PIX, or SPEI. |
-| **Yield** | <span class="badge badge--soon">Coming Soon</span> | Earn yield on your balance by default — like a high-interest checking account. Choose your risk level for higher returns. |
+| **Yield** | <span class="badge badge--soon">Coming Soon</span> | Earn yield on your balance by default. Choose your risk level for higher returns. |
 | **Credit & Lending** | <span class="badge badge--soon">Coming Soon</span> | Borrow against your crypto. Collateralized and uncollateralized lines. |
 
 ## Multi-Chain by Default
@@ -78,7 +78,7 @@ This matters because:
 
 - **Crypto holders** who want to actually use their assets without off-ramping to a bank account, waiting days, doing manual transfers, and paying fees at every step.
 - **People in emerging markets** — Latin America, Africa, and Asia-Pacific — who are underserved by traditional banking and deal with currency volatility, inflation, and limited access to USD-denominated accounts.
-- **Anyone** who wants a financial account that bridges crypto and traditional banking — hold stablecoins, spend with a card, and send money to any bank account.
+- **Anyone** who wants a self-custody wallet that bridges crypto and traditional finance — hold stablecoins, spend with a card, and send money to any bank account.
 
 ## Target Markets
 

@@ -48,7 +48,7 @@ The key insight is that the card network doesn't need to be modified. We plug in
 
 ## Multi-Currency Spending
 
-When you use your card in a non-USD currency (e.g., spending in Mexico in MXN), Visa handles the FX conversion at their published rate. The amount debited from your USDC balance is the USD equivalent after conversion.
+When you use your card in a non-USD currency (e.g., EUR), Visa handles the FX conversion at their published rate. The amount debited from your USDC balance is the USD equivalent after conversion.
 
 This means your USDC balance acts as a universal spending account — one balance, any currency, any country.
 

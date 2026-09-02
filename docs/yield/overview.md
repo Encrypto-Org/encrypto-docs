@@ -7,7 +7,7 @@ title: Overview
 
 <span class="badge badge--soon">Coming Soon</span>
 
-Your money should work for you. Encrypto is building yield directly into the wallet experience — not as a separate DeFi feature, but as a core part of how your account works. Think of it like a high-interest checking account, powered by crypto infrastructure.
+Your money should work for you. Encrypto is building yield directly into the wallet experience — not as a separate DeFi feature, but as a core part of how your account works.
 
 ## The Vision
 

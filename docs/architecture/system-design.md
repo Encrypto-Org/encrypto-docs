@@ -65,7 +65,7 @@ Services include:
 - **Liquidity Engine** — Real-time asset conversion across DEX aggregators and market makers
 - **Identity Service** — User authentication (Privy), KYC orchestration, session management
 - **Card Service** — Card issuance, transaction authorization, balance management
-- **Banking Service** — Bank account linking (Plaid), on-ramp/off-ramp transfers, virtual accounts, payment rail management (ACH, PIX, SPEI, CVU). Multi-provider LATAM coverage: Koywe (7 countries), Orda (Brazil PIX), LocalPayment (17 countries)
+- **Fiat Rails Service** — Bank account linking (Plaid), on-ramp/off-ramp transfers, virtual accounts, payment rail management (ACH, PIX, SPEI, CVU). Multi-provider LATAM coverage: Koywe (7 countries), Orda (Brazil PIX), LocalPayment (17 countries)
 - **Points Service** — Reward tracking, referral management, leaderboard
 - **Webhook Handler** — Processes callbacks from KYC provider, card network, payment rails, and on-chain events
 
